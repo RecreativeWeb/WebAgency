@@ -66,3 +66,179 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 26, ../sass/screen.scss */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  /*FIN DU BODY*/
+}
+/* line 30, ../sass/screen.scss */
+body .container {
+  width: 1600px;
+  margin: 0 auto;
+  /* HEADER FIXED EN TOP: LOGO ET MENU */
+  /* SECTION 1 : ECRAN D'ACCUEIL */
+  /*FIN DU CONTAINER*/
+}
+/* line 34, ../sass/screen.scss */
+body .container .header {
+  width: 1600px;
+  height: 100px;
+  position: fixed;
+  z-index: 800;
+  margin-top: -1px;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+/* line 43, ../sass/screen.scss */
+body .container .header .logo {
+  width: 253px;
+  height: 57px;
+  margin-top: 21px;
+}
+/* line 48, ../sass/screen.scss */
+body .container .header .liens {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-top: 21px;
+}
+/* line 54, ../sass/screen.scss */
+body .container .header .liens li {
+  line-height: 57px;
+}
+/* line 56, ../sass/screen.scss */
+body .container .header .liens li a {
+  color: black;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  display: block;
+}
+/* line 63, ../sass/screen.scss */
+body .container .header .liens li a:hover {
+  border-top: 2px solid #70abcf;
+  margin-top: -2px;
+}
+/* line 70, ../sass/screen.scss */
+body .container .accueil {
+  padding-top: 100px;
+}
+/* line 72, ../sass/screen.scss */
+body .container .accueil .slider {
+  width: 1600px;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 77, ../sass/screen.scss */
+body .container .accueil .slider .slideshow {
+  width: 3200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 82, ../sass/screen.scss */
+body .container .accueil .slider .slideshow li {
+  display: inline-block;
+}
+/* line 85, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 {
+  width: 1600px;
+  height: 550px;
+  background-image: url("../images/bg1.jpg");
+  transition: left 1s;
+}
+/* line 90, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 .slogan {
+  font-size: 30px;
+  padding-top: 140px;
+  padding-left: 100px;
+}
+/* line 94, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 .slogan .bleu {
+  color: #70abcf;
+}
+/* line 97, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 .slogan .blanc {
+  color: white;
+}
+/* line 101, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 .sousSlogan {
+  color: white;
+  font-size: 14px;
+  padding-left: 100px;
+}
+/* line 106, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider1 .boutonInfo {
+  background-color: #70abcf;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+/* line 114, ../sass/screen.scss */
+body .container .accueil .slider .slideshow #slider1:target {
+  left: -1600px;
+}
+/* line 117, ../sass/screen.scss */
+body .container .accueil .slider .slideshow .slider2 {
+  width: 1600px;
+  height: 550px;
+  background-image: url("../images/bg2.jpg");
+  transition: left 1s;
+}
+/* line 123, ../sass/screen.scss */
+body .container .accueil .slider .slideshow #slider2:target {
+  left: 1600px;
+}
+/* line 128, ../sass/screen.scss */
+body .container .accueil .fleches {
+  width: 1600px;
+  height: 55px;
+  position: absolute;
+  top: 247px;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 135, ../sass/screen.scss */
+body .container .accueil .fleches .flecheGauche {
+  display: block;
+  background-color: silver;
+  font-size: 18px;
+  color: white;
+  line-height: 55px;
+  width: 25px;
+  border-radius: 0 25px 25px 0;
+  padding-left: 5px;
+  text-decoration: none;
+}
+/* line 142, ../sass/screen.scss */
+body .container .accueil .fleches .flecheGauche:hover {
+  background-color: #70abcf;
+}
+/* line 145, ../sass/screen.scss */
+body .container .accueil .fleches .flecheDroite {
+  display: block;
+  background-color: silver;
+  font-size: 18px;
+  color: white;
+  line-height: 55px;
+  width: 15px;
+  border-radius: 25px 0 0 25px;
+  padding-left: 15px;
+  text-decoration: none;
+}
+/* line 152, ../sass/screen.scss */
+body .container .accueil .fleches .flecheDroite:hover {
+  background-color: #70abcf;
+}
+/* line 156, ../sass/screen.scss */
+body .container .accueil .slider2 .fleches {
+  left: 1600px;
+}

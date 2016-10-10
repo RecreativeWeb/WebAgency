@@ -2,5 +2,178 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
+@import"compass";
 @import "compass/reset";
+$bleu: rgb(112,171,207);
+@mixin animeLiens{
+	border-top: 2px solid $bleu;
+	margin-top: -2px;
+}
+@mixin section{
+	padding-top: 100px;
+}
+@mixin boutton{
+	background-color: $bleu;
+	color: white;
+}
+@mixin fleches{
+	display: block;
+	background-color: silver;
+	font-size: 18px;
+	color: white;
+	line-height: 55px;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;	
+	.container{
+		width:1600px;
+		margin: 0 auto;
+/* HEADER FIXED EN TOP: LOGO ET MENU */
+		.header{
+			width: 1600px;
+			height: 100px;
+			position: fixed;
+			z-index:800;
+			margin-top: -1px;
+			display: flex;
+			justify-content: space-around;
+			background-color: white;
+			.logo{
+				width: 253px;
+				height: 57px;
+				margin-top: 21px;
+			}
+			.liens{
+				width: 800px;
+				display: flex;
+				justify-content: space-between;
+				list-style: none;
+				margin-top: 21px;
+				li{
+					line-height: 57px;
+					a{
+						color: black;
+						font-size:16px;
+						font-weight: 800;
+						text-decoration: none;
+						display: block;
+					}
+					a:hover{
+						@include animeLiens;
+					}	
+				}
+			}
+		}
+/* SECTION 1 : ECRAN D'ACCUEIL */
+		.accueil{
+			@include section;	
+			.slider{
+				width: 1600px;
+				height: 550px;
+				position:relative;
+				overflow:hidden;
+				.slideshow{
+					width: 3200px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					li{
+						display: inline-block;
+					}
+					.slider1{
+						width: 1600px;
+						height: 550px;
+						background-image: url('../images/bg1.jpg');
+						transition: left 1s;
+						.slogan{
+							font-size:30px;
+							padding-top: 140px;
+							padding-left: 100px;
+							.bleu{
+								color: $bleu;
+							}
+							.blanc{
+								color: white;
+							}
+						}
+						.sousSlogan{
+							color: white;
+							font-size: 14px;
+							padding-left: 100px;
+						}
+						.boutonInfo{
+							@include boutton;
+							font-size: 16px;
+							border-radius: 5px;
+							margin-top: 20px;
+							margin-left: 100px;
+						}
+					}
+					#slider1:target{
+						left: -1600px;
+					}
+					.slider2{
+						width: 1600px;
+						height: 550px;
+						background-image: url('../images/bg2.jpg');
+						transition: left 1s;
+					}
+					#slider2:target{
+						left: 1600px;
+					}
+				}
+			}
+			.fleches{
+					width: 1600px;
+					height: 55px;
+					position: absolute;
+					top: 247px;
+					display: flex;
+					justify-content: space-between;
+					.flecheGauche{
+						@include fleches;
+						width: 25px;
+						border-radius:0 25px 25px 0;
+						padding-left: 5px;
+						text-decoration: none;
+					}
+					.flecheGauche:hover{
+						background-color: $bleu;
+					}
+					.flecheDroite{
+						@include fleches;
+						width: 15px;
+						border-radius:25px 0 0 25px;
+						padding-left: 15px;
+						text-decoration: none;
+					}
+					.flecheDroite:hover{
+						background-color: $bleu;
+					}			 
+			}
+			.slider2 .fleches{
+					left: 1600px;
+			}		
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FIN DU CONTAINER*/
+	}
+/*FIN DU BODY*/
+}

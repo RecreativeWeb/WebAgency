@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Web Agency</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+	<!--<link rel="stylesheet" type="text/css" href="stylesheets/screenMediumPlus.css" media="screen and (max-width:1200px)"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/screenMedium.css" media="screen and (max-width:1024px)"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/screenSmall.css" media="screen and (max-width:768px)">
+	<link rel="stylesheet" type="text/css" href="stylesheets/screenExtraSmall.css" media="screen and (max-width:480px)">-->
+	<meta name="viewport" content="width=device-width"/>
 </head>
 <body>
-
+	<div class="container">
+<!-- HEADER FIXED EN TOP: LOGO ET MENU -->
+		<header class="header">
+				<img class="logo" src="images/logo.png" />
+				<nav>
+					<ul class="liens">
+						<li><a href="#accueil">Accueil</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+		</header>
+<!-- SECTION 1 : ECRAN D'ACCUEIL -->
+		<section class="accueil" id="accueil">	
+			<div class="slider">
+				<ul class="slideshow">
+					<li id="slider1" class="slider1">
+						<h1 class="slogan"><span class="bleu">WEBAGENCY</span><span class="blanc">: L'AGENCE DE TOUS<br/> VOS PROJETS !</span></h1>
+						<h2 class="sousSlogan">Vous avez un projet web ? La webAgency vous aide à le réaliser !</h2>
+						<input type="button" value="Plus d'infos" class="boutonInfo" />
+					</li>
+					<li id="slider2" class="slider2"></li>
+				</ul>
+				<div class="fleches">
+					<a href="#slider1" class="flecheGauche"><</a>
+					<a href="#slider2" class="flecheDroite">></a>
+				</div>
+			</div>
+		</section>	
+	</div>
 </body>
 </html>
