@@ -216,6 +216,7 @@ body{
 			.positionServices{
 				display: flex;
 				justify-content: space-between;
+				margin-top: 40px;
 				.image{
 					width: 510px;
 					height: 319px;
@@ -225,7 +226,7 @@ body{
 				.listeMetiers{
 					width: 1000px;
 					list-style: none;
-					margin-top: 60px;
+					margin-top: 80px;
 					li{
 						display: flex;
 						justify-content: space-around;
@@ -260,7 +261,107 @@ body{
 				}
 			}	
 		}
-
+/* SECTION 3 : PROJETS */
+		.portfolio{
+			@include section;
+			background-color: rgb(245,245,245);
+			.titrePortfolio{
+				h1{
+					@include titre;
+				}
+				.trait{
+					@include trait;
+				}
+				.rond{
+					@include rond;
+				}
+				h2{
+					@include sousTitre;
+				}
+			}
+			.menuPortfolio{
+				display: flex;
+				justify-content: center;
+				margin-top: 40px;
+				margin-bottom: 40px;
+				li{
+					list-style: none;
+					position: relative;
+					a{
+						display: block;
+						width: 90px;
+						height: 30px;
+						background-color: rgb(227,227,227);
+						line-height: 30px;
+						text-align: center;
+						font-size: 14px;
+						color: black;
+						text-decoration: none;
+					}
+					a:hover, .defaut{
+						background-color: $bleu;
+						color: white;
+						border-bottom: 3px solid rgb(85,140,170);
+						margin-bottom: -3px;
+						span{
+							display: block;
+							width: 0;
+							height: 0;
+							position: absolute;
+							margin-left: 39px;
+							border-left: 8px solid transparent;
+    						border-right: 8px solid transparent;
+    						border-top: 8px solid rgb(85,140,170);
+    						margin-bottom: -3px;
+						}
+					}
+				}
+			}
+			.cover{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				margin: 0;
+				padding: 0;
+				li{
+					width: 350px;
+					height: 233px;
+					margin-left: 10px;
+					margin-right: 10px;
+					margin-bottom: 20px;
+					list-style: none;
+					overflow: hidden;
+					.creative{
+						width: 350px;
+						height: 233px;
+						background-size: 350px 233px;
+					}
+					p{
+					  height: 100px;
+					  padding: 20px;
+					  background-color: rgba(0,0,0,0.7);
+					  opacity: 0.8;
+					  transition: margin-top 0.5s ease;
+					}
+				}
+				li:hover p{
+					margin-top: -100px;
+					color: white;
+					font-size: 14px;
+						span.grosRond{
+						border-radius: 25px;
+						width: 10px;
+						height: 10px;
+						background-color: $bleu;
+						border: 2px solid white;
+						display: block;
+						position: absolute;
+						top: -5px;
+						margin-left: 240px;
+						}
+				}
+			}
+		}
 
 
 

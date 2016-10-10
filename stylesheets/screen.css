@@ -81,6 +81,7 @@ body .container {
   /* HEADER FIXED EN TOP: LOGO ET MENU */
   /* SECTION 1 : ECRAN D'ACCUEIL */
   /* SECTION 2 : SERVICES */
+  /* SECTION 3 : PROJETS */
   /*FIN DU CONTAINER*/
 }
 /* line 73, ../sass/screen.scss */
@@ -282,26 +283,27 @@ body .container .services .titreSection h2 {
 body .container .services .positionServices {
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
-/* line 219, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 body .container .services .positionServices .image {
   width: 510px;
   height: 319px;
   background-image: url("../images/main-feature.png");
   margin-top: 100px;
 }
-/* line 225, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers {
   width: 1000px;
   list-style: none;
-  margin-top: 60px;
+  margin-top: 80px;
 }
-/* line 229, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers li {
   display: flex;
   justify-content: space-around;
 }
-/* line 233, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i {
   display: block;
   width: 50px;
@@ -314,7 +316,7 @@ body .container .services .positionServices .listeMetiers i {
   text-align: center;
   position: relative;
 }
-/* line 244, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i span {
   display: block;
   width: 10px;
@@ -326,8 +328,137 @@ body .container .services .positionServices .listeMetiers i span {
   border: 2px solid white;
   background-color: #70abcf;
 }
-/* line 256, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers .definition {
   width: 900px;
   margin-bottom: 40px;
+}
+/* line 265, ../sass/screen.scss */
+body .container .portfolio {
+  padding-top: 100px;
+  background-color: whitesmoke;
+}
+/* line 269, ../sass/screen.scss */
+body .container .portfolio .titrePortfolio h1 {
+  text-align: center;
+  font-size: 30px;
+}
+/* line 272, ../sass/screen.scss */
+body .container .portfolio .titrePortfolio .trait {
+  width: 200px;
+  height: 1px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: silver;
+  position: relative;
+}
+/* line 275, ../sass/screen.scss */
+body .container .portfolio .titrePortfolio .rond {
+  width: 10px;
+  height: 10px;
+  background-color: #70abcf;
+  border-radius: 25px;
+  border: 2px solid white;
+  position: absolute;
+  margin-left: 95px;
+  margin-top: -6px;
+}
+/* line 278, ../sass/screen.scss */
+body .container .portfolio .titrePortfolio h2 {
+  text-align: center;
+  font-size: 14px;
+}
+/* line 282, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+/* line 287, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li {
+  list-style: none;
+  position: relative;
+}
+/* line 290, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li a {
+  display: block;
+  width: 90px;
+  height: 30px;
+  background-color: #e3e3e3;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+/* line 301, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li a:hover, body .container .portfolio .menuPortfolio li .defaut {
+  background-color: #70abcf;
+  color: white;
+  border-bottom: 3px solid #558caa;
+  margin-bottom: -3px;
+}
+/* line 306, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li a:hover span, body .container .portfolio .menuPortfolio li .defaut span {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin-left: 39px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #558caa;
+  margin-bottom: -3px;
+}
+/* line 320, ../sass/screen.scss */
+body .container .portfolio .cover {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+/* line 326, ../sass/screen.scss */
+body .container .portfolio .cover li {
+  width: 350px;
+  height: 233px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  list-style: none;
+  overflow: hidden;
+}
+/* line 334, ../sass/screen.scss */
+body .container .portfolio .cover li .creative {
+  width: 350px;
+  height: 233px;
+  background-size: 350px 233px;
+}
+/* line 339, ../sass/screen.scss */
+body .container .portfolio .cover li p {
+  height: 100px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.8;
+  transition: margin-top 0.5s ease;
+}
+/* line 347, ../sass/screen.scss */
+body .container .portfolio .cover li:hover p {
+  margin-top: -100px;
+  color: white;
+  font-size: 14px;
+}
+/* line 351, ../sass/screen.scss */
+body .container .portfolio .cover li:hover p span.grosRond {
+  border-radius: 25px;
+  width: 10px;
+  height: 10px;
+  background-color: #70abcf;
+  border: 2px solid white;
+  display: block;
+  position: absolute;
+  top: -5px;
+  margin-left: 240px;
 }
