@@ -348,16 +348,24 @@ body{
 					margin-top: -100px;
 					color: white;
 					font-size: 14px;
+					position: relative;
 						span.grosRond{
+						display: block;
+						position: absolute;
 						border-radius: 25px;
-						width: 10px;
-						height: 10px;
+						width: 25px;
+						height: 25px;
 						background-color: $bleu;
 						border: 2px solid white;
 						display: block;
 						position: absolute;
-						top: -5px;
-						margin-left: 240px;
+						top: -12px;
+						margin-left: 260px;
+						text-align: center;
+							.fa{
+								font-size: 20px;
+								line-height: 25px;
+							}
 						}
 				}
 			}
