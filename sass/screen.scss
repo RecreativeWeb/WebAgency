@@ -6,11 +6,13 @@
 @import "compass/reset";
 $bleu: rgb(112,171,207);
 @mixin animeLiens{
-	border-top: 2px solid $bleu;
-	margin-top: -2px;
+	border-top: 3px solid $bleu;
+	margin-top: -3px;
 }
 @mixin section{
-	padding-top: 100px;
+	padding-top: 120px;
+	margin-bottom: 1000px;	
+	position: relative;
 }
 @mixin boutton{
 	background-color: $bleu;
@@ -27,12 +29,11 @@ $bleu: rgb(112,171,207);
 	text-align: center;
 	font-size:30px;
 }
-
 @mixin sousTitre{
 	text-align: center;
 	font-size: 14px;
+	margin-bottom: 30px;
 }
-
 @mixin trait{
 	width: 200px;
 	height: 1px;
@@ -42,7 +43,6 @@ $bleu: rgb(112,171,207);
 	background-color: silver;
 	position: relative;
 }
-
 @mixin rond{
 	width: 10px;
 	height: 10px;
@@ -53,22 +53,15 @@ $bleu: rgb(112,171,207);
 	margin-left: 95px;
 	margin-top: -6px;
 }
-
-
-
-
-
-
-
-
+/* DEBUT DU SCSS */
 body{
 	margin: 0px;
 	padding: 0px;
-	font-family: sans-serif;	
+	font-family: sans-serif;
+	overflow: hidden;	
 	.container{
 		width:1600px;
 		margin: 0 auto;
-		
 /* HEADER FIXED EN TOP: LOGO ET MENU */
 		.header{
 			width: 1600px;
@@ -94,7 +87,7 @@ body{
 					line-height: 57px;
 					a{
 						color: black;
-						font-size:16px;
+						font-size:18px;
 						font-weight: 800;
 						text-decoration: none;
 						display: block;
@@ -107,7 +100,7 @@ body{
 		}
 /* SECTION 1 : ECRAN D'ACCUEIL */
 		.accueil{
-			@include section;	
+			@include section;
 			.slider{
 				width: 1600px;
 				height: 550px;
@@ -370,20 +363,67 @@ body{
 				}
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* SECTION 4 : CONTACT */
+		.contact{
+			@include section;
+			margin-bottom: 200px;
+			.titreContact{
+				h1{
+					@include titre;
+				}
+				.trait{
+					@include trait;
+				}
+				.rond{
+					@include rond;
+				}
+				h2{
+					@include sousTitre;
+				}
+			}
+			.filtre{
+				width: 1600px;
+				height: 500px;
+				background-color: rgba(143,201,219,0.2);
+				position: absolute;
+				z-index: 600;
+				top: 247px;
+				.infos{
+					width: 280px;
+					height: 430px;
+					background-color: rgba(255,255,255,0.9);
+					border: 1px dotted silver;
+					margin-top: 30px;
+					margin-left: 1050px;
+					position: absolute;
+					h3{
+						margin-left:10px;
+						margin-top: 30px;
+						font-weight: 800;
+					}
+					.adresse{
+						font-size: 14px;
+						font-weight: 800;
+						margin-left: 10px;
+						line-height: 20px;
+					}
+					input, textarea{
+						width: 90%;
+						display: block;
+						margin: auto;
+						margin-bottom: 10px;
+						border: 1px solid silver;
+						background-color: white;
+					}
+					.envoyer{
+						@include boutton;
+						font-size: 12px;
+						width: 110px;
+						margin-right: 160px;
+					}
+				}
+			}	
+		}
 /*FIN DU CONTAINER*/
 	}
 /*FIN DU BODY*/

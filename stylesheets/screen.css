@@ -67,14 +67,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 64, ../sass/screen.scss */
+/* DEBUT DU SCSS */
+/* line 57, ../sass/screen.scss */
 body {
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
+  overflow: hidden;
   /*FIN DU BODY*/
 }
-/* line 68, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 body .container {
   width: 1600px;
   margin: 0 auto;
@@ -82,9 +84,10 @@ body .container {
   /* SECTION 1 : ECRAN D'ACCUEIL */
   /* SECTION 2 : SERVICES */
   /* SECTION 3 : PROJETS */
+  /* SECTION 4 : CONTACT */
   /*FIN DU CONTAINER*/
 }
-/* line 73, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 body .container .header {
   width: 1600px;
   height: 100px;
@@ -95,13 +98,13 @@ body .container .header {
   justify-content: space-around;
   background-color: white;
 }
-/* line 82, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 body .container .header .logo {
   width: 253px;
   height: 57px;
   margin-top: 21px;
 }
-/* line 87, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 body .container .header .liens {
   width: 800px;
   display: flex;
@@ -109,73 +112,75 @@ body .container .header .liens {
   list-style: none;
   margin-top: 21px;
 }
-/* line 93, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 body .container .header .liens li {
   line-height: 57px;
 }
-/* line 95, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 body .container .header .liens li a {
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   text-decoration: none;
   display: block;
 }
-/* line 102, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 body .container .header .liens li a:hover {
-  border-top: 2px solid #70abcf;
-  margin-top: -2px;
+  border-top: 3px solid #70abcf;
+  margin-top: -3px;
 }
-/* line 109, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 body .container .accueil {
-  padding-top: 100px;
+  padding-top: 120px;
+  margin-bottom: 1000px;
+  position: relative;
 }
-/* line 111, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 body .container .accueil .slider {
   width: 1600px;
   height: 550px;
   position: relative;
   overflow: hidden;
 }
-/* line 116, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 body .container .accueil .slider .slideshow {
   width: 3200px;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 121, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 body .container .accueil .slider .slideshow li {
   display: inline-block;
 }
-/* line 124, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 {
   width: 1600px;
   height: 550px;
   background-image: url("../images/bg1.jpg");
   transition: left 1s;
 }
-/* line 129, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan {
   font-size: 30px;
   padding-top: 140px;
   padding-left: 100px;
 }
-/* line 133, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan .bleu {
   color: #70abcf;
 }
-/* line 136, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan .blanc {
   color: white;
 }
-/* line 140, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .sousSlogan {
   color: white;
   font-size: 14px;
   padding-left: 100px;
 }
-/* line 145, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .boutonInfo {
   background-color: #70abcf;
   color: white;
@@ -184,22 +189,22 @@ body .container .accueil .slider .slideshow .slider1 .boutonInfo {
   margin-top: 20px;
   margin-left: 100px;
 }
-/* line 153, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 body .container .accueil .slider .slideshow #slider1:target {
   left: -1600px;
 }
-/* line 156, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider2 {
   width: 1600px;
   height: 550px;
   background-image: url("../images/bg2.jpg");
   transition: left 1s;
 }
-/* line 162, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 body .container .accueil .slider .slideshow #slider2:target {
   left: 1600px;
 }
-/* line 167, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 body .container .accueil .fleches {
   width: 1600px;
   height: 55px;
@@ -208,7 +213,7 @@ body .container .accueil .fleches {
   display: flex;
   justify-content: space-between;
 }
-/* line 174, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 body .container .accueil .fleches .flecheGauche {
   display: block;
   background-color: silver;
@@ -220,11 +225,11 @@ body .container .accueil .fleches .flecheGauche {
   padding-left: 5px;
   text-decoration: none;
 }
-/* line 181, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 body .container .accueil .fleches .flecheGauche:hover {
   background-color: #70abcf;
 }
-/* line 184, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 body .container .accueil .fleches .flecheDroite {
   display: block;
   background-color: silver;
@@ -236,24 +241,26 @@ body .container .accueil .fleches .flecheDroite {
   padding-left: 15px;
   text-decoration: none;
 }
-/* line 191, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 body .container .accueil .fleches .flecheDroite:hover {
   background-color: #70abcf;
 }
-/* line 195, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 body .container .accueil .slider2 .fleches {
   left: 1600px;
 }
-/* line 200, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 body .container .services {
-  padding-top: 100px;
+  padding-top: 120px;
+  margin-bottom: 1000px;
+  position: relative;
 }
-/* line 203, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 body .container .services .titreSection h1 {
   text-align: center;
   font-size: 30px;
 }
-/* line 206, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 body .container .services .titreSection .trait {
   width: 200px;
   height: 1px;
@@ -263,7 +270,7 @@ body .container .services .titreSection .trait {
   background-color: silver;
   position: relative;
 }
-/* line 209, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 body .container .services .titreSection .rond {
   width: 10px;
   height: 10px;
@@ -274,36 +281,37 @@ body .container .services .titreSection .rond {
   margin-left: 95px;
   margin-top: -6px;
 }
-/* line 212, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 body .container .services .titreSection h2 {
   text-align: center;
   font-size: 14px;
+  margin-bottom: 30px;
 }
-/* line 216, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 body .container .services .positionServices {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
 }
-/* line 220, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 body .container .services .positionServices .image {
   width: 510px;
   height: 319px;
   background-image: url("../images/main-feature.png");
   margin-top: 100px;
 }
-/* line 226, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers {
   width: 1000px;
   list-style: none;
   margin-top: 80px;
 }
-/* line 230, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers li {
   display: flex;
   justify-content: space-around;
 }
-/* line 234, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i {
   display: block;
   width: 50px;
@@ -316,7 +324,7 @@ body .container .services .positionServices .listeMetiers i {
   text-align: center;
   position: relative;
 }
-/* line 245, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i span {
   display: block;
   width: 10px;
@@ -328,22 +336,24 @@ body .container .services .positionServices .listeMetiers i span {
   border: 2px solid white;
   background-color: #70abcf;
 }
-/* line 257, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers .definition {
   width: 900px;
   margin-bottom: 40px;
 }
-/* line 265, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 body .container .portfolio {
-  padding-top: 100px;
+  padding-top: 120px;
+  margin-bottom: 1000px;
+  position: relative;
   background-color: whitesmoke;
 }
-/* line 269, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio h1 {
   text-align: center;
   font-size: 30px;
 }
-/* line 272, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio .trait {
   width: 200px;
   height: 1px;
@@ -353,7 +363,7 @@ body .container .portfolio .titrePortfolio .trait {
   background-color: silver;
   position: relative;
 }
-/* line 275, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio .rond {
   width: 10px;
   height: 10px;
@@ -364,24 +374,25 @@ body .container .portfolio .titrePortfolio .rond {
   margin-left: 95px;
   margin-top: -6px;
 }
-/* line 278, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio h2 {
   text-align: center;
   font-size: 14px;
+  margin-bottom: 30px;
 }
-/* line 282, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio {
   display: flex;
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-/* line 287, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li {
   list-style: none;
   position: relative;
 }
-/* line 290, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li a {
   display: block;
   width: 90px;
@@ -393,14 +404,14 @@ body .container .portfolio .menuPortfolio li a {
   color: black;
   text-decoration: none;
 }
-/* line 301, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li a:hover, body .container .portfolio .menuPortfolio li .defaut {
   background-color: #70abcf;
   color: white;
   border-bottom: 3px solid #558caa;
   margin-bottom: -3px;
 }
-/* line 306, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li a:hover span, body .container .portfolio .menuPortfolio li .defaut span {
   display: block;
   width: 0;
@@ -412,7 +423,7 @@ body .container .portfolio .menuPortfolio li a:hover span, body .container .port
   border-top: 8px solid #558caa;
   margin-bottom: -3px;
 }
-/* line 320, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 body .container .portfolio .cover {
   display: flex;
   flex-wrap: wrap;
@@ -420,7 +431,7 @@ body .container .portfolio .cover {
   margin: 0;
   padding: 0;
 }
-/* line 326, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 body .container .portfolio .cover li {
   width: 350px;
   height: 233px;
@@ -430,13 +441,13 @@ body .container .portfolio .cover li {
   list-style: none;
   overflow: hidden;
 }
-/* line 334, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 body .container .portfolio .cover li .creative {
   width: 350px;
   height: 233px;
   background-size: 350px 233px;
 }
-/* line 339, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 body .container .portfolio .cover li p {
   height: 100px;
   padding: 20px;
@@ -444,14 +455,14 @@ body .container .portfolio .cover li p {
   opacity: 0.8;
   transition: margin-top 0.5s ease;
 }
-/* line 347, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p {
   margin-top: -100px;
   color: white;
   font-size: 14px;
   position: relative;
 }
-/* line 352, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p span.grosRond {
   display: block;
   position: absolute;
@@ -466,8 +477,96 @@ body .container .portfolio .cover li:hover p span.grosRond {
   margin-left: 260px;
   text-align: center;
 }
-/* line 365, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p span.grosRond .fa {
   font-size: 20px;
   line-height: 25px;
+}
+/* line 367, ../sass/screen.scss */
+body .container .contact {
+  padding-top: 120px;
+  margin-bottom: 1000px;
+  position: relative;
+  margin-bottom: 200px;
+}
+/* line 371, ../sass/screen.scss */
+body .container .contact .titreContact h1 {
+  text-align: center;
+  font-size: 30px;
+}
+/* line 374, ../sass/screen.scss */
+body .container .contact .titreContact .trait {
+  width: 200px;
+  height: 1px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: silver;
+  position: relative;
+}
+/* line 377, ../sass/screen.scss */
+body .container .contact .titreContact .rond {
+  width: 10px;
+  height: 10px;
+  background-color: #70abcf;
+  border-radius: 25px;
+  border: 2px solid white;
+  position: absolute;
+  margin-left: 95px;
+  margin-top: -6px;
+}
+/* line 380, ../sass/screen.scss */
+body .container .contact .titreContact h2 {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+/* line 384, ../sass/screen.scss */
+body .container .contact .filtre {
+  width: 1600px;
+  height: 500px;
+  background-color: rgba(143, 201, 219, 0.2);
+  position: absolute;
+  z-index: 600;
+  top: 247px;
+}
+/* line 391, ../sass/screen.scss */
+body .container .contact .filtre .infos {
+  width: 280px;
+  height: 430px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px dotted silver;
+  margin-top: 30px;
+  margin-left: 1050px;
+  position: absolute;
+}
+/* line 399, ../sass/screen.scss */
+body .container .contact .filtre .infos h3 {
+  margin-left: 10px;
+  margin-top: 30px;
+  font-weight: 800;
+}
+/* line 404, ../sass/screen.scss */
+body .container .contact .filtre .infos .adresse {
+  font-size: 14px;
+  font-weight: 800;
+  margin-left: 10px;
+  line-height: 20px;
+}
+/* line 410, ../sass/screen.scss */
+body .container .contact .filtre .infos input, body .container .contact .filtre .infos textarea {
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid silver;
+  background-color: white;
+}
+/* line 418, ../sass/screen.scss */
+body .container .contact .filtre .infos .envoyer {
+  background-color: #70abcf;
+  color: white;
+  font-size: 12px;
+  width: 110px;
+  margin-right: 160px;
 }
