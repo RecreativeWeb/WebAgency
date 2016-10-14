@@ -72,14 +72,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   margin: 0px;
   padding: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   font-family: sans-serif;
-  overflow: hidden;
+  /*overflow: hidden;*/
   /*FIN DU BODY*/
 }
-/* line 62, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 body .container {
+  position: absolute;
+  left: 50%;
   width: 1600px;
-  margin: 0 auto;
+  margin-left: -800px;
   /* HEADER FIXED EN TOP: LOGO ET MENU */
   /* SECTION 1 : ECRAN D'ACCUEIL */
   /* SECTION 2 : SERVICES */
@@ -87,7 +92,42 @@ body .container {
   /* SECTION 4 : CONTACT */
   /*FIN DU CONTAINER*/
 }
-/* line 66, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 65, ../sass/screen.scss */
+  body .container {
+    width: 1200px;
+    margin-left: -600px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 65, ../sass/screen.scss */
+  body .container {
+    width: 1000px;
+    margin-left: -500px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 65, ../sass/screen.scss */
+  body .container {
+    width: 800px;
+    margin-left: -400px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 65, ../sass/screen.scss */
+  body .container {
+    width: 700px;
+    margin-left: -350px;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  /* line 65, ../sass/screen.scss */
+  body .container {
+    width: 400px;
+    margin-left: -200px;
+  }
+}
+/* line 91, ../sass/screen.scss */
 body .container .header {
   width: 1600px;
   height: 100px;
@@ -98,25 +138,109 @@ body .container .header {
   justify-content: space-around;
   background-color: white;
 }
-/* line 75, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 91, ../sass/screen.scss */
+  body .container .header {
+    width: 1200px;
+    height: 100px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 91, ../sass/screen.scss */
+  body .container .header {
+    width: 1000px;
+    height: 100px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 91, ../sass/screen.scss */
+  body .container .header {
+    width: 800px;
+    height: 100px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 91, ../sass/screen.scss */
+  body .container .header {
+    width: 700px;
+    height: 120px;
+    display: block;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  /* line 91, ../sass/screen.scss */
+  body .container .header {
+    width: 400px;
+    height: 120px;
+    display: block;
+  }
+}
+/* line 124, ../sass/screen.scss */
 body .container .header .logo {
   width: 253px;
   height: 57px;
   margin-top: 21px;
+  background-image: url("../images/logo.png");
 }
-/* line 80, ../sass/screen.scss */
+@media screen and (max-width: 770px) {
+  /* line 124, ../sass/screen.scss */
+  body .container .header .logo {
+    width: 253px;
+    height: 57px;
+    margin: 0 auto;
+    background-size: cover;
+  }
+}
+/* line 136, ../sass/screen.scss */
 body .container .header .liens {
-  width: 800px;
+  width: 700px;
   display: flex;
   justify-content: space-between;
   list-style: none;
   margin-top: 21px;
 }
-/* line 86, ../sass/screen.scss */
+@media screen and (max-width: 1400px) {
+  /* line 136, ../sass/screen.scss */
+  body .container .header .liens {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* line 136, ../sass/screen.scss */
+  body .container .header .liens {
+    width: 350px;
+    margin-left: -200px;
+  }
+}
+@media screen and (max-width: 770px) {
+  /* line 136, ../sass/screen.scss */
+  body .container .header .liens {
+    width: 700px;
+    margin-top: 15px;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 136, ../sass/screen.scss */
+  body .container .header .liens {
+    width: 400px;
+    margin-top: 15px;
+    justify-content: space-around;
+  }
+}
+/* line 159, ../sass/screen.scss */
 body .container .header .liens li {
   line-height: 57px;
 }
-/* line 88, ../sass/screen.scss */
+@media screen and (max-width: 770px) {
+  /* line 159, ../sass/screen.scss */
+  body .container .header .liens li {
+    line-height: 30px;
+  }
+}
+/* line 164, ../sass/screen.scss */
 body .container .header .liens li a {
   color: black;
   font-size: 18px;
@@ -124,63 +248,174 @@ body .container .header .liens li a {
   text-decoration: none;
   display: block;
 }
-/* line 95, ../sass/screen.scss */
+@media screen and (max-width: 1400px) {
+  /* line 164, ../sass/screen.scss */
+  body .container .header .liens li a {
+    font-size: 14px;
+  }
+}
+/* line 174, ../sass/screen.scss */
 body .container .header .liens li a:hover {
   border-top: 3px solid #70abcf;
   margin-top: -3px;
 }
-/* line 102, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 body .container .accueil {
-  padding-top: 120px;
-  margin-bottom: 1000px;
+  padding-top: 100px;
   position: relative;
+  height: 100vh;
 }
-/* line 104, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 body .container .accueil .slider {
   width: 1600px;
   height: 550px;
   position: relative;
   overflow: hidden;
 }
-/* line 109, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 183, ../sass/screen.scss */
+  body .container .accueil .slider {
+    width: 1200px;
+    height: 375px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 183, ../sass/screen.scss */
+  body .container .accueil .slider {
+    width: 1000px;
+    height: 375px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 183, ../sass/screen.scss */
+  body .container .accueil .slider {
+    width: 800px;
+    height: 375px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 183, ../sass/screen.scss */
+  body .container .accueil .slider {
+    width: 700px;
+    height: 375px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 183, ../sass/screen.scss */
+  body .container .accueil .slider {
+    width: 400px;
+    height: 137px;
+  }
+}
+/* line 208, ../sass/screen.scss */
 body .container .accueil .slider .slideshow {
   width: 3200px;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 114, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 208, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow {
+    width: 2400px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 208, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow {
+    width: 2000px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 208, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow {
+    width: 1600px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 208, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow {
+    width: 1400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 208, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow {
+    width: 800px;
+  }
+}
+/* line 228, ../sass/screen.scss */
 body .container .accueil .slider .slideshow li {
   display: inline-block;
 }
-/* line 117, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 {
   width: 1600px;
   height: 550px;
   background-image: url("../images/bg1.jpg");
   transition: left 1s;
 }
-/* line 122, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 231, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider1 {
+    width: 1200px;
+    height: 412px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 231, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider1 {
+    width: 1000px;
+    height: 343px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 231, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider1 {
+    width: 800px;
+    height: 275px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 231, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider1 {
+    width: 700px;
+    height: 240px;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 231, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider1 {
+    width: 400px;
+    height: 137px;
+    background-size: cover;
+  }
+}
+/* line 261, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan {
   font-size: 30px;
   padding-top: 140px;
   padding-left: 100px;
 }
-/* line 126, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan .bleu {
   color: #70abcf;
 }
-/* line 129, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .slogan .blanc {
   color: white;
 }
-/* line 133, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .sousSlogan {
   color: white;
   font-size: 14px;
   padding-left: 100px;
 }
-/* line 138, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider1 .boutonInfo {
   background-color: #70abcf;
   color: white;
@@ -189,22 +424,122 @@ body .container .accueil .slider .slideshow .slider1 .boutonInfo {
   margin-top: 20px;
   margin-left: 100px;
 }
-/* line 146, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 body .container .accueil .slider .slideshow #slider1:target {
   left: -1600px;
 }
-/* line 149, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 285, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider1:target {
+    left: -1200px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 285, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider1:target {
+    left: -1000px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 285, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider1:target {
+    left: -800px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 285, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider1:target {
+    left: -700px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 285, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider1:target {
+    left: -400px;
+  }
+}
+/* line 303, ../sass/screen.scss */
 body .container .accueil .slider .slideshow .slider2 {
   width: 1600px;
   height: 550px;
   background-image: url("../images/bg2.jpg");
   transition: left 1s;
 }
-/* line 155, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 303, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider2 {
+    width: 1200px;
+    height: 412px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 303, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider2 {
+    width: 1000px;
+    height: 343px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 303, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider2 {
+    width: 800px;
+    height: 275px;
+    background-size: cover;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 303, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider2 {
+    width: 700px;
+    height: 240px;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 303, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow .slider2 {
+    width: 400px;
+    height: 137px;
+    background-size: cover;
+  }
+}
+/* line 334, ../sass/screen.scss */
 body .container .accueil .slider .slideshow #slider2:target {
   left: 1600px;
 }
-/* line 160, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 334, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider2:target {
+    left: 1200px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 334, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider2:target {
+    left: 1000px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 334, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider2:target {
+    left: 800px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 334, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider2:target {
+    left: 700px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 334, ../sass/screen.scss */
+  body .container .accueil .slider .slideshow #slider2:target {
+    left: 400px;
+  }
+}
+/* line 354, ../sass/screen.scss */
 body .container .accueil .fleches {
   width: 1600px;
   height: 55px;
@@ -213,7 +548,42 @@ body .container .accueil .fleches {
   display: flex;
   justify-content: space-between;
 }
-/* line 167, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 354, ../sass/screen.scss */
+  body .container .accueil .fleches {
+    width: 1200px;
+    top: 178px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 354, ../sass/screen.scss */
+  body .container .accueil .fleches {
+    width: 1000px;
+    top: 144px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 354, ../sass/screen.scss */
+  body .container .accueil .fleches {
+    width: 800px;
+    top: 110px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 354, ../sass/screen.scss */
+  body .container .accueil .fleches {
+    width: 700px;
+    top: 92px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 354, ../sass/screen.scss */
+  body .container .accueil .fleches {
+    width: 400px;
+    top: 41px;
+  }
+}
+/* line 381, ../sass/screen.scss */
 body .container .accueil .fleches .flecheGauche {
   display: block;
   background-color: silver;
@@ -225,11 +595,11 @@ body .container .accueil .fleches .flecheGauche {
   padding-left: 5px;
   text-decoration: none;
 }
-/* line 174, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 body .container .accueil .fleches .flecheGauche:hover {
   background-color: #70abcf;
 }
-/* line 177, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 body .container .accueil .fleches .flecheDroite {
   display: block;
   background-color: silver;
@@ -241,26 +611,39 @@ body .container .accueil .fleches .flecheDroite {
   padding-left: 15px;
   text-decoration: none;
 }
-/* line 184, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 body .container .accueil .fleches .flecheDroite:hover {
   background-color: #70abcf;
 }
-/* line 188, ../sass/screen.scss */
-body .container .accueil .slider2 .fleches {
+/* line 402, ../sass/screen.scss */
+body .container .accueil .slider2:target .fleches {
   left: 1600px;
 }
-/* line 193, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 body .container .services {
-  padding-top: 120px;
-  margin-bottom: 1000px;
+  padding-top: 100px;
   position: relative;
+  height: 100vh;
 }
-/* line 196, ../sass/screen.scss */
+/* line 410, ../sass/screen.scss */
 body .container .services .titreSection h1 {
   text-align: center;
   font-size: 30px;
+  padding-top: 40px;
 }
-/* line 199, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 410, ../sass/screen.scss */
+  body .container .services .titreSection h1 {
+    padding-top: 25px;
+  }
+}
+@media screen and (max-device-width: 1400px) {
+  /* line 410, ../sass/screen.scss */
+  body .container .services .titreSection h1 {
+    font-size: 25px;
+  }
+}
+/* line 420, ../sass/screen.scss */
 body .container .services .titreSection .trait {
   width: 200px;
   height: 1px;
@@ -270,7 +653,7 @@ body .container .services .titreSection .trait {
   background-color: silver;
   position: relative;
 }
-/* line 202, ../sass/screen.scss */
+/* line 423, ../sass/screen.scss */
 body .container .services .titreSection .rond {
   width: 10px;
   height: 10px;
@@ -281,37 +664,97 @@ body .container .services .titreSection .rond {
   margin-left: 95px;
   margin-top: -6px;
 }
-/* line 205, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 body .container .services .titreSection h2 {
   text-align: center;
   font-size: 14px;
   margin-bottom: 30px;
 }
-/* line 209, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 body .container .services .positionServices {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
 }
-/* line 213, ../sass/screen.scss */
+@media screen and (max-device-width: 770px) {
+  /* line 430, ../sass/screen.scss */
+  body .container .services .positionServices {
+    display: block;
+  }
+}
+/* line 436, ../sass/screen.scss */
 body .container .services .positionServices .image {
   width: 510px;
   height: 319px;
   background-image: url("../images/main-feature.png");
-  margin-top: 100px;
+  margin-top: 20px;
 }
-/* line 219, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 436, ../sass/screen.scss */
+  body .container .services .positionServices .image {
+    width: 400px;
+    height: 250px;
+    background-size: 400px 250px;
+    margin-top: 35px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 436, ../sass/screen.scss */
+  body .container .services .positionServices .image {
+    width: 300px;
+    height: 187px;
+    background-size: 300px 187px;
+    margin-top: 60px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 436, ../sass/screen.scss */
+  body .container .services .positionServices .image {
+    width: 250px;
+    height: 156px;
+    background-size: 250px 156px;
+    margin-top: 60px;
+  }
+}
+/* line 460, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers {
-  width: 1000px;
+  width: 1200px;
   list-style: none;
-  margin-top: 80px;
+  margin-top: 50px;
 }
-/* line 223, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 460, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers {
+    width: 850px;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 460, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers {
+    width: 700px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 460, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers {
+    width: 600px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 460, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers {
+    width: 700px;
+    margin-top: 40px;
+  }
+}
+/* line 480, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers li {
   display: flex;
   justify-content: space-around;
 }
-/* line 227, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i {
   display: block;
   width: 50px;
@@ -324,7 +767,16 @@ body .container .services .positionServices .listeMetiers i {
   text-align: center;
   position: relative;
 }
-/* line 238, ../sass/screen.scss */
+@media screen and (max-device-width: 1200px) {
+  /* line 484, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers i {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+/* line 501, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers i span {
   display: block;
   width: 10px;
@@ -336,24 +788,82 @@ body .container .services .positionServices .listeMetiers i span {
   border: 2px solid white;
   background-color: #70abcf;
 }
-/* line 250, ../sass/screen.scss */
+@media screen and (max-device-width: 1200px) {
+  /* line 501, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers i span {
+    width: 8px;
+    height: 8px;
+    left: 34px;
+    top: 15px;
+  }
+}
+/* line 519, ../sass/screen.scss */
 body .container .services .positionServices .listeMetiers .definition {
-  width: 900px;
+  width: 1000px;
   margin-bottom: 40px;
 }
-/* line 258, ../sass/screen.scss */
-body .container .portfolio {
-  padding-top: 120px;
-  margin-bottom: 1000px;
-  position: relative;
-  background-color: whitesmoke;
+@media screen and (max-device-width: 1400px) {
+  /* line 519, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers .definition {
+    width: 700px;
+  }
 }
-/* line 262, ../sass/screen.scss */
+@media screen and (max-device-width: 1200px) {
+  /* line 519, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers .definition {
+    width: 600px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 519, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers .definition {
+    width: 500px;
+  }
+}
+@media screen and (max-device-width: 770px) {
+  /* line 519, ../sass/screen.scss */
+  body .container .services .positionServices .listeMetiers .definition {
+    width: 600px;
+  }
+}
+/* line 534, ../sass/screen.scss */
+body .container .services .positionServices .listeMetiers .definition h1 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+/* line 539, ../sass/screen.scss */
+body .container .services .positionServices .listeMetiers .definition p {
+  font-size: 12px;
+  line-height: 14px;
+}
+/* line 548, ../sass/screen.scss */
+body .container .portfolio {
+  padding-top: 100px;
+  position: relative;
+  height: 100vh;
+  background-color: whitesmoke;
+  height: 800px;
+}
+@media screen and (max-device-width: 1400px) {
+  /* line 548, ../sass/screen.scss */
+  body .container .portfolio {
+    height: 1050px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 548, ../sass/screen.scss */
+  body .container .portfolio {
+    height: 1340px;
+  }
+}
+/* line 559, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio h1 {
   text-align: center;
   font-size: 30px;
+  padding-top: 40px;
 }
-/* line 265, ../sass/screen.scss */
+/* line 563, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio .trait {
   width: 200px;
   height: 1px;
@@ -363,7 +873,7 @@ body .container .portfolio .titrePortfolio .trait {
   background-color: silver;
   position: relative;
 }
-/* line 268, ../sass/screen.scss */
+/* line 566, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio .rond {
   width: 10px;
   height: 10px;
@@ -374,25 +884,25 @@ body .container .portfolio .titrePortfolio .rond {
   margin-left: 95px;
   margin-top: -6px;
 }
-/* line 271, ../sass/screen.scss */
+/* line 569, ../sass/screen.scss */
 body .container .portfolio .titrePortfolio h2 {
   text-align: center;
   font-size: 14px;
   margin-bottom: 30px;
 }
-/* line 275, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio {
   display: flex;
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-/* line 280, ../sass/screen.scss */
+/* line 578, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li {
   list-style: none;
   position: relative;
 }
-/* line 283, ../sass/screen.scss */
+/* line 581, ../sass/screen.scss */
 body .container .portfolio .menuPortfolio li a {
   display: block;
   width: 90px;
@@ -404,15 +914,15 @@ body .container .portfolio .menuPortfolio li a {
   color: black;
   text-decoration: none;
 }
-/* line 294, ../sass/screen.scss */
-body .container .portfolio .menuPortfolio li a:hover, body .container .portfolio .menuPortfolio li .defaut {
+/* line 592, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li a:hover {
   background-color: #70abcf;
   color: white;
   border-bottom: 3px solid #558caa;
   margin-bottom: -3px;
 }
-/* line 299, ../sass/screen.scss */
-body .container .portfolio .menuPortfolio li a:hover span, body .container .portfolio .menuPortfolio li .defaut span {
+/* line 597, ../sass/screen.scss */
+body .container .portfolio .menuPortfolio li a:hover span {
   display: block;
   width: 0;
   height: 0;
@@ -423,31 +933,29 @@ body .container .portfolio .menuPortfolio li a:hover span, body .container .port
   border-top: 8px solid #558caa;
   margin-bottom: -3px;
 }
-/* line 313, ../sass/screen.scss */
+/* line 611, ../sass/screen.scss */
 body .container .portfolio .cover {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
 }
-/* line 319, ../sass/screen.scss */
+/* line 615, ../sass/screen.scss */
 body .container .portfolio .cover li {
   width: 350px;
   height: 233px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
   list-style: none;
   overflow: hidden;
 }
-/* line 327, ../sass/screen.scss */
+/* line 623, ../sass/screen.scss */
 body .container .portfolio .cover li .creative {
   width: 350px;
   height: 233px;
   background-size: 350px 233px;
 }
-/* line 332, ../sass/screen.scss */
+/* line 628, ../sass/screen.scss */
 body .container .portfolio .cover li p {
   height: 100px;
   padding: 20px;
@@ -455,14 +963,14 @@ body .container .portfolio .cover li p {
   opacity: 0.8;
   transition: margin-top 0.5s ease;
 }
-/* line 340, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p {
   margin-top: -100px;
   color: white;
   font-size: 14px;
   position: relative;
 }
-/* line 345, ../sass/screen.scss */
+/* line 641, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p span.grosRond {
   display: block;
   position: absolute;
@@ -477,24 +985,25 @@ body .container .portfolio .cover li:hover p span.grosRond {
   margin-left: 260px;
   text-align: center;
 }
-/* line 358, ../sass/screen.scss */
+/* line 654, ../sass/screen.scss */
 body .container .portfolio .cover li:hover p span.grosRond .fa {
   font-size: 20px;
   line-height: 25px;
 }
-/* line 367, ../sass/screen.scss */
+/* line 663, ../sass/screen.scss */
 body .container .contact {
-  padding-top: 120px;
-  margin-bottom: 1000px;
+  padding-top: 100px;
   position: relative;
+  height: 100vh;
   margin-bottom: 200px;
 }
-/* line 371, ../sass/screen.scss */
+/* line 667, ../sass/screen.scss */
 body .container .contact .titreContact h1 {
   text-align: center;
   font-size: 30px;
+  padding-top: 40px;
 }
-/* line 374, ../sass/screen.scss */
+/* line 671, ../sass/screen.scss */
 body .container .contact .titreContact .trait {
   width: 200px;
   height: 1px;
@@ -504,7 +1013,7 @@ body .container .contact .titreContact .trait {
   background-color: silver;
   position: relative;
 }
-/* line 377, ../sass/screen.scss */
+/* line 674, ../sass/screen.scss */
 body .container .contact .titreContact .rond {
   width: 10px;
   height: 10px;
@@ -515,22 +1024,74 @@ body .container .contact .titreContact .rond {
   margin-left: 95px;
   margin-top: -6px;
 }
-/* line 380, ../sass/screen.scss */
+/* line 677, ../sass/screen.scss */
 body .container .contact .titreContact h2 {
   text-align: center;
   font-size: 14px;
   margin-bottom: 30px;
 }
-/* line 384, ../sass/screen.scss */
+/* line 681, ../sass/screen.scss */
+body .container .contact .responsiveMap {
+  position: relative;
+}
+/* line 683, ../sass/screen.scss */
+body .container .contact .responsiveMap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-device-width: 1400px) {
+  /* line 683, ../sass/screen.scss */
+  body .container .contact .responsiveMap iframe {
+    width: 1200px;
+    height: 375px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 683, ../sass/screen.scss */
+  body .container .contact .responsiveMap iframe {
+    width: 1000px;
+    height: 312px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 683, ../sass/screen.scss */
+  body .container .contact .responsiveMap iframe {
+    width: 800px;
+    height: 250px;
+  }
+}
+/* line 702, ../sass/screen.scss */
 body .container .contact .filtre {
   width: 1600px;
   height: 500px;
-  background-color: rgba(143, 201, 219, 0.2);
+  background-color: rgba(143, 201, 219, 0.3);
   position: absolute;
   z-index: 600;
-  top: 247px;
+  top: 270px;
 }
-/* line 391, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 702, ../sass/screen.scss */
+  body .container .contact .filtre {
+    width: 1200px;
+    height: 375px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 702, ../sass/screen.scss */
+  body .container .contact .filtre {
+    width: 1000px;
+    height: 312px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 702, ../sass/screen.scss */
+  body .container .contact .filtre {
+    width: 800px;
+    height: 250px;
+  }
+}
+/* line 721, ../sass/screen.scss */
 body .container .contact .filtre .infos {
   width: 280px;
   height: 430px;
@@ -540,20 +1101,80 @@ body .container .contact .filtre .infos {
   margin-left: 1050px;
   position: absolute;
 }
-/* line 399, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 721, ../sass/screen.scss */
+  body .container .contact .filtre .infos {
+    width: 200px;
+    height: 318px;
+    margin-left: 900px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 721, ../sass/screen.scss */
+  body .container .contact .filtre .infos {
+    width: 200px;
+    height: 290px;
+    margin-left: 750px;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 721, ../sass/screen.scss */
+  body .container .contact .filtre .infos {
+    width: 200px;
+    height: 220px;
+    margin-left: 380px;
+    margin-top: 18px;
+  }
+}
+/* line 746, ../sass/screen.scss */
 body .container .contact .filtre .infos h3 {
   margin-left: 10px;
   margin-top: 30px;
   font-weight: 800;
 }
-/* line 404, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 746, ../sass/screen.scss */
+  body .container .contact .filtre .infos h3 {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-device-width: 1200px) {
+  /* line 746, ../sass/screen.scss */
+  body .container .contact .filtre .infos h3 {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 746, ../sass/screen.scss */
+  body .container .contact .filtre .infos h3 {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+}
+/* line 761, ../sass/screen.scss */
 body .container .contact .filtre .infos .adresse {
   font-size: 14px;
   font-weight: 800;
   margin-left: 10px;
   line-height: 20px;
 }
-/* line 410, ../sass/screen.scss */
+@media screen and (max-device-width: 1400px) {
+  /* line 761, ../sass/screen.scss */
+  body .container .contact .filtre .infos .adresse {
+    line-height: 15px;
+  }
+}
+@media screen and (max-device-width: 1000px) {
+  /* line 761, ../sass/screen.scss */
+  body .container .contact .filtre .infos .adresse {
+    line-height: 13px;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+}
+/* line 776, ../sass/screen.scss */
 body .container .contact .filtre .infos input, body .container .contact .filtre .infos textarea {
   width: 90%;
   display: block;
@@ -562,11 +1183,23 @@ body .container .contact .filtre .infos input, body .container .contact .filtre 
   border: 1px solid silver;
   background-color: white;
 }
-/* line 418, ../sass/screen.scss */
+@media screen and (max-device-width: 1000px) {
+  /* line 776, ../sass/screen.scss */
+  body .container .contact .filtre .infos input, body .container .contact .filtre .infos textarea {
+    margin-top: -5px;
+  }
+}
+/* line 787, ../sass/screen.scss */
 body .container .contact .filtre .infos .envoyer {
   background-color: #70abcf;
   color: white;
   font-size: 12px;
   width: 110px;
   margin-right: 160px;
+}
+@media screen and (max-device-width: 1400px) {
+  /* line 787, ../sass/screen.scss */
+  body .container .contact .filtre .infos .envoyer {
+    margin-left: 8px;
+  }
 }

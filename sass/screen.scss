@@ -10,9 +10,9 @@ $bleu: rgb(112,171,207);
 	margin-top: -3px;
 }
 @mixin section{
-	padding-top: 120px;
-	margin-bottom: 1000px;	
+	padding-top: 100px;	
 	position: relative;
+	height: 100vh;
 }
 @mixin boutton{
 	background-color: $bleu;
@@ -57,11 +57,36 @@ $bleu: rgb(112,171,207);
 body{
 	margin: 0px;
 	padding: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	font-family: sans-serif;
-	overflow: hidden;	
+	/*overflow: hidden;*/
 	.container{
+		position: absolute;
+		left: 50%;
 		width:1600px;
-		margin: 0 auto;
+		margin-left: -800px;
+		@media screen and (max-device-width: 1400px){
+			width: 1200px;
+			margin-left: -600px;
+		}
+		@media screen and (max-device-width: 1200px){
+			width: 1000px;
+			margin-left: -500px;
+		}
+		@media screen and (max-device-width: 1000px){
+			width: 800px;
+			margin-left: -400px;
+		}
+		@media screen and (max-device-width: 770px){
+			width: 700px;
+			margin-left: -350px;
+		}
+		@media screen and (max-device-width: 480px){
+			width: 400px;
+			margin-left: -200px;
+		}
 /* HEADER FIXED EN TOP: LOGO ET MENU */
 		.header{
 			width: 1600px;
@@ -72,25 +97,79 @@ body{
 			display: flex;
 			justify-content: space-around;
 			background-color: white;
+			@media screen and (max-device-width: 1400px){
+				width: 1200px;
+				height: 100px;
+			}
+			@media screen and (max-device-width: 1200px){
+				width: 1000px;
+				height: 100px;
+				justify-content: space-between;
+			}
+			@media screen and (max-device-width: 1000px){
+				width: 800px;
+				height: 100px;
+				justify-content: space-between;
+			}
+			@media screen and (max-device-width: 770px){
+				width: 700px;
+				height: 120px;
+				display: block;
+			}
+			@media screen and (max-device-width: 480px){
+				width: 400px;
+				height: 120px;
+				display: block;
+			}
 			.logo{
 				width: 253px;
 				height: 57px;
 				margin-top: 21px;
+				background-image: url('../images/logo.png');
+				@media screen and (max-width: 770px){
+					width: 253px;
+					height: 57px;
+					margin: 0 auto;
+					background-size: cover;
+				}
 			}
 			.liens{
-				width: 800px;
+				width: 700px;
 				display: flex;
 				justify-content: space-between;
 				list-style: none;
 				margin-top: 21px;
+				@media screen and (max-width: 1400px){
+					width: 400px;
+				}
+				@media screen and (max-width: 1200px){
+					width: 350px;
+					margin-left: -200px;
+				}
+				@media screen and (max-width: 770px){
+					width: 700px;
+					margin-top: 15px;
+					justify-content: space-around;
+				}
+				@media screen and (max-width: 480px){
+					width: 400px;
+					margin-top: 15px;
+					justify-content: space-around;
+				}
 				li{
 					line-height: 57px;
+					@media screen and (max-width: 770px){
+						line-height: 30px;
+					}
 					a{
 						color: black;
 						font-size:18px;
 						font-weight: 800;
 						text-decoration: none;
 						display: block;
+						@media screen and (max-width: 1400px){
+							font-size: 14px;
+						}
 					}
 					a:hover{
 						@include animeLiens;
@@ -106,11 +185,46 @@ body{
 				height: 550px;
 				position:relative;
 				overflow:hidden;
+				@media screen and (max-device-width: 1400px){
+					width: 1200px;
+					height: 375px;
+				}
+				@media screen and (max-device-width: 1200px){
+					width: 1000px;
+					height: 375px;
+				}
+				@media screen and (max-device-width: 1000px){
+					width: 800px;
+					height: 375px;
+				}
+				@media screen and (max-device-width: 770px){
+					width: 700px;
+					height: 375px;
+				}
+				@media screen and (max-width: 480px){
+					width: 400px;
+					height: 137px;
+				}
 				.slideshow{
 					width: 3200px;
 					position: absolute;
 					top: 0;
 					left: 0;
+					@media screen and (max-device-width: 1400px){
+						width: 2400px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 2000px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 1600px;
+					}
+					@media screen and (max-device-width: 770px){
+						width: 1400px;
+					}
+					@media screen and (max-width: 480px){
+						width: 800px;
+					}
 					li{
 						display: inline-block;
 					}
@@ -119,6 +233,31 @@ body{
 						height: 550px;
 						background-image: url('../images/bg1.jpg');
 						transition: left 1s;
+						@media screen and (max-device-width: 1400px){
+							width: 1200px;
+							height: 412px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 1200px){
+							width: 1000px;
+							height: 343px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 1000px){
+							width: 800px;
+							height: 275px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 770px){
+							width: 700px;
+							height: 240px;
+							background-size: cover;
+						}
+						@media screen and (max-width: 480px){
+							width: 400px;
+							height: 137px;
+							background-size: cover;
+						}
 						.slogan{
 							font-size:30px;
 							padding-top: 140px;
@@ -145,15 +284,70 @@ body{
 					}
 					#slider1:target{
 						left: -1600px;
+						@media screen and (max-device-width: 1400px){
+							left: -1200px;
+						}
+						@media screen and (max-device-width: 1200px){
+							left: -1000px;
+						}
+						@media screen and (max-device-width: 1000px){
+							left: -800px;
+						}
+						@media screen and (max-device-width: 770px){
+							left: -700px;
+						}
+						@media screen and (max-width: 480px){
+							left: -400px;
+						}
 					}
 					.slider2{
 						width: 1600px;
 						height: 550px;
 						background-image: url('../images/bg2.jpg');
 						transition: left 1s;
+						@media screen and (max-device-width: 1400px){
+							width: 1200px;
+							height: 412px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 1200px){
+							width: 1000px;
+							height: 343px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 1000px){
+							width: 800px;
+							height: 275px;
+							background-size: cover;
+						}
+						@media screen and (max-device-width: 770px){
+							width: 700px;
+							height: 240px;
+							background-size: cover;
+						}
+						@media screen and (max-width: 480px){
+							width: 400px;
+							height: 137px;
+							background-size: cover;
+						}
 					}
 					#slider2:target{
 						left: 1600px;
+						@media screen and (max-device-width: 1400px){
+							left: 1200px;
+						}
+						@media screen and (max-device-width: 1200px){
+							left: 1000px;
+						}
+						@media screen and (max-device-width: 1000px){
+							left: 800px;
+						}
+						@media screen and (max-device-width: 770px){
+							left: 700px;
+						}
+						@media screen and (max-width: 480px){
+							left: 400px;
+						}
 					}
 				}
 			}
@@ -164,6 +358,26 @@ body{
 					top: 247px;
 					display: flex;
 					justify-content: space-between;
+					@media screen and (max-device-width: 1400px){
+						width: 1200px;
+						top: 178px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 1000px;
+						top: 144px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 800px;
+						top: 110px;
+					}
+					@media screen and (max-device-width: 770px){
+						width: 700px;
+						top: 92px;
+					}
+					@media screen and (max-width: 480px){
+						width: 400px;
+						top: 41px;
+					}
 					.flecheGauche{
 						@include fleches;
 						width: 25px;
@@ -185,7 +399,7 @@ body{
 						background-color: $bleu;
 					}			 
 			}
-			.slider2 .fleches{
+			.slider2:target .fleches{
 					left: 1600px;
 			}		
 		}
@@ -195,6 +409,13 @@ body{
 			.titreSection{
 				h1{
 					@include titre;
+					padding-top: 40px;
+					@media screen and (max-device-width: 1400px){
+						padding-top: 25px;
+					}
+					@media screen and (max-device-width: 1400px){
+						font-size: 25px;
+					}
 				}
 				.trait{
 					@include trait;
@@ -209,17 +430,53 @@ body{
 			.positionServices{
 				display: flex;
 				justify-content: space-between;
-				margin-top: 40px;
+				@media screen and (max-device-width: 770px){
+					display: block;
+				}
 				.image{
 					width: 510px;
 					height: 319px;
 					background-image: url("../images/main-feature.png");
-					margin-top: 100px;
+					margin-top: 20px;
+					@media screen and (max-device-width: 1400px){
+						width: 400px;
+						height: 250px;
+						background-size: 400px 250px;
+						margin-top: 35px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 300px;
+						height: 187px;
+						background-size: 300px 187px;
+						margin-top: 60px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 250px;
+						height: 156px;
+						background-size: 250px 156px;
+						margin-top: 60px;
+					}
 				}
 				.listeMetiers{
-					width: 1000px;
+					width: 1200px;
 					list-style: none;
-					margin-top: 80px;
+					margin-top: 50px;
+					@media screen and (max-device-width: 1400px){
+						width: 850px;
+						margin-top: 30px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 700px;
+						margin-top: 40px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 600px;
+						margin-top: 40px;
+					}
+					@media screen and (max-device-width: 770px){
+						width: 700px;
+						margin-top: 40px;
+					}
 					li{
 						display: flex;
 						justify-content: space-around;
@@ -235,6 +492,12 @@ body{
 						color: $bleu;
 						text-align: center;
 						position: relative;
+						@media screen and (max-device-width: 1200px){
+							width: 40px;
+							height: 40px;
+							font-size: 20px;
+							line-height: 40px;
+						}
 						span{
 							display: block;
 							width: 10px;
@@ -245,11 +508,38 @@ body{
 							border-radius: 25px;
 							border: 2px solid white;
 							background-color: $bleu;
+							@media screen and (max-device-width: 1200px){
+								width: 8px;
+								height: 8px;
+								left: 34px;
+								top: 15px;
+							}
 						}
 					}
 					.definition{
-						width: 900px;
+						width: 1000px;
 						margin-bottom: 40px;
+						@media screen and (max-device-width: 1400px){
+							width: 700px;
+						}
+						@media screen and (max-device-width: 1200px){
+							width: 600px;
+						}
+						@media screen and (max-device-width: 1000px){
+							width: 500px;
+						}
+						@media screen and (max-device-width: 770px){
+							width: 600px;
+						}
+						h1{
+							font-weight: bold;
+							font-size: 14px;
+							line-height: 20px;
+						}
+						p{
+							font-size: 12px;
+							line-height: 14px;
+						}
 					}	
 				}
 			}	
@@ -258,9 +548,17 @@ body{
 		.portfolio{
 			@include section;
 			background-color: rgb(245,245,245);
+			height: 800px;
+			@media screen and (max-device-width: 1400px){
+				height: 1050px;
+			}
+			@media screen and (max-device-width: 1200px){
+				height: 1340px;
+			}
 			.titrePortfolio{
 				h1{
 					@include titre;
+					padding-top: 40px;
 				}
 				.trait{
 					@include trait;
@@ -291,7 +589,7 @@ body{
 						color: black;
 						text-decoration: none;
 					}
-					a:hover, .defaut{
+					a:hover{
 						background-color: $bleu;
 						color: white;
 						border-bottom: 3px solid rgb(85,140,170);
@@ -313,15 +611,13 @@ body{
 			.cover{
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: space-around;
-				margin: 0;
-				padding: 0;
+				justify-content: center;
 				li{
 					width: 350px;
 					height: 233px;
-					margin-left: 10px;
-					margin-right: 10px;
-					margin-bottom: 20px;
+					margin-left: 20px;
+					margin-right: 20px;
+					margin-bottom: 40px;
 					list-style: none;
 					overflow: hidden;
 					.creative{
@@ -370,6 +666,7 @@ body{
 			.titreContact{
 				h1{
 					@include titre;
+					padding-top: 40px;
 				}
 				.trait{
 					@include trait;
@@ -381,13 +678,46 @@ body{
 					@include sousTitre;
 				}
 			}
+			.responsiveMap{
+				position: relative;
+				iframe{
+					position: absolute;
+					top: 0;
+					left: 0;
+					@media screen and (max-device-width: 1400px){
+						width: 1200px;
+						height: 375px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 1000px;
+						height: 312px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 800px;
+						height: 250px;
+					}
+				}
+
+			}
 			.filtre{
 				width: 1600px;
 				height: 500px;
-				background-color: rgba(143,201,219,0.2);
+				background-color: rgba(143,201,219,0.3);
 				position: absolute;
 				z-index: 600;
-				top: 247px;
+				top: 270px;
+				@media screen and (max-device-width: 1400px){
+					width: 1200px;
+					height: 375px;
+				}
+				@media screen and (max-device-width: 1200px){
+					width: 1000px;
+					height: 312px;
+				}
+				@media screen and (max-device-width: 1000px){
+					width: 800px;
+					height: 250px;
+				}
 				.infos{
 					width: 280px;
 					height: 430px;
@@ -396,16 +726,52 @@ body{
 					margin-top: 30px;
 					margin-left: 1050px;
 					position: absolute;
+					@media screen and (max-device-width: 1400px){
+						width: 200px;
+						height: 318px;
+						margin-left: 900px;
+					}
+					@media screen and (max-device-width: 1200px){
+						width: 200px;
+						height: 290px;
+						margin-left: 750px;
+						margin-top: 10px;
+					}
+					@media screen and (max-device-width: 1000px){
+						width: 200px;
+						height: 220px;
+						margin-left: 380px;
+						margin-top: 18px;
+					}
 					h3{
 						margin-left:10px;
 						margin-top: 30px;
 						font-weight: 800;
+						@media screen and (max-device-width: 1400px){
+							margin-top: 20px;
+						}
+						@media screen and (max-device-width: 1200px){
+							margin-top: 10px;
+						}
+						@media screen and (max-device-width: 1000px){
+							margin-top: 8px;
+							font-size: 13px;
+						}
 					}
 					.adresse{
 						font-size: 14px;
 						font-weight: 800;
 						margin-left: 10px;
 						line-height: 20px;
+						@media screen and (max-device-width: 1400px){
+							line-height: 15px;
+						}
+						@media screen and (max-device-width: 1000px){
+							line-height: 13px;
+							font-size: 13px;
+							margin-top: -10px;
+							margin-bottom: -10px;
+						}
 					}
 					input, textarea{
 						width: 90%;
@@ -414,12 +780,18 @@ body{
 						margin-bottom: 10px;
 						border: 1px solid silver;
 						background-color: white;
+						@media screen and (max-device-width: 1000px){
+							margin-top: -5px;
+						}
 					}
 					.envoyer{
 						@include boutton;
 						font-size: 12px;
 						width: 110px;
 						margin-right: 160px;
+						@media screen and (max-device-width: 1400px){
+							margin-left: 8px;
+						}
 					}
 				}
 			}	
