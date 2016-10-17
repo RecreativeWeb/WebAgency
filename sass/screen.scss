@@ -67,23 +67,23 @@ body{
 		left: 50%;
 		width:1600px;
 		margin-left: -800px;
-		@media screen and (max-device-width: 1400px){
+		@media screen and (max-width: 1400px){
 			width: 1200px;
 			margin-left: -600px;
 		}
-		@media screen and (max-device-width: 1200px){
+		@media screen and (max-width: 1200px){
 			width: 1000px;
 			margin-left: -500px;
 		}
-		@media screen and (max-device-width: 1000px){
+		@media screen and (max-width: 1000px){
 			width: 800px;
 			margin-left: -400px;
 		}
-		@media screen and (max-device-width: 770px){
+		@media all screen and (max-device-width: 770px){
 			width: 700px;
 			margin-left: -350px;
 		}
-		@media screen and (max-device-width: 480px){
+		@media all screen and (max-device-width: 480px){
 			width: 400px;
 			margin-left: -200px;
 		}
@@ -111,15 +111,15 @@ body{
 				height: 100px;
 				justify-content: space-between;
 			}
-			@media screen and (max-device-width: 770px){
+			@media all screen and (max-device-width: 770px){
 				width: 700px;
-				height: 120px;
-				display: block;
+				height: 200px;
+				flex-direction: column;
 			}
-			@media screen and (max-device-width: 480px){
+			@media all screen and (max-device-width: 480px){
 				width: 400px;
-				height: 120px;
-				display: block;
+				height: 200px;
+				flex-direction: column;
 			}
 			.logo{
 				width: 253px;
@@ -127,10 +127,9 @@ body{
 				margin-top: 21px;
 				background-image: url('../images/logo.png');
 				@media screen and (max-width: 770px){
-					width: 253px;
-					height: 57px;
-					margin: 0 auto;
-					background-size: cover;
+					margin: auto;
+					display: block;
+
 				}
 			}
 			.liens{
@@ -146,19 +145,18 @@ body{
 					width: 350px;
 					margin-left: -200px;
 				}
-				@media screen and (max-width: 770px){
+				@media handheld and (max-width: 770px){
 					width: 700px;
 					margin-top: 15px;
-					justify-content: space-around;
+					display: block;
 				}
-				@media screen and (max-width: 480px){
+				@media handheld and (max-width: 480px){
 					width: 400px;
 					margin-top: 15px;
-					justify-content: space-around;
 				}
 				li{
 					line-height: 57px;
-					@media screen and (max-width: 770px){
+					@media handheld and (max-width: 770px){
 						line-height: 30px;
 					}
 					a{
@@ -197,11 +195,11 @@ body{
 					width: 800px;
 					height: 375px;
 				}
-				@media screen and (max-device-width: 770px){
+				@media handheld and (max-device-width: 770px){
 					width: 700px;
 					height: 375px;
 				}
-				@media screen and (max-width: 480px){
+				@media handheld and (max-width: 480px){
 					width: 400px;
 					height: 137px;
 				}
@@ -219,10 +217,10 @@ body{
 					@media screen and (max-device-width: 1000px){
 						width: 1600px;
 					}
-					@media screen and (max-device-width: 770px){
+					@media handheld and (max-device-width: 770px){
 						width: 1400px;
 					}
-					@media screen and (max-width: 480px){
+					@media handheld and (max-width: 480px){
 						width: 800px;
 					}
 					li{
@@ -248,12 +246,12 @@ body{
 							height: 275px;
 							background-size: cover;
 						}
-						@media screen and (max-device-width: 770px){
+						@media handheld and (max-device-width: 770px){
 							width: 700px;
 							height: 240px;
 							background-size: cover;
 						}
-						@media screen and (max-width: 480px){
+						@media handheld and (max-width: 480px){
 							width: 400px;
 							height: 137px;
 							background-size: cover;
@@ -293,10 +291,10 @@ body{
 						@media screen and (max-device-width: 1000px){
 							left: -800px;
 						}
-						@media screen and (max-device-width: 770px){
+						@media handheld and (max-device-width: 770px){
 							left: -700px;
 						}
-						@media screen and (max-width: 480px){
+						@media handheld and (max-width: 480px){
 							left: -400px;
 						}
 					}
@@ -320,12 +318,12 @@ body{
 							height: 275px;
 							background-size: cover;
 						}
-						@media screen and (max-device-width: 770px){
+						@media handheld and (max-device-width: 770px){
 							width: 700px;
 							height: 240px;
 							background-size: cover;
 						}
-						@media screen and (max-width: 480px){
+						@media handheld and (max-width: 480px){
 							width: 400px;
 							height: 137px;
 							background-size: cover;
@@ -342,10 +340,10 @@ body{
 						@media screen and (max-device-width: 1000px){
 							left: 800px;
 						}
-						@media screen and (max-device-width: 770px){
+						@media handheld and (max-device-width: 770px){
 							left: 700px;
 						}
-						@media screen and (max-width: 480px){
+						@media handheld and (max-width: 480px){
 							left: 400px;
 						}
 					}
@@ -370,11 +368,11 @@ body{
 						width: 800px;
 						top: 110px;
 					}
-					@media screen and (max-device-width: 770px){
+					@media handheld and (max-device-width: 770px){
 						width: 700px;
 						top: 92px;
 					}
-					@media screen and (max-width: 480px){
+					@media handheld and (max-width: 480px){
 						width: 400px;
 						top: 41px;
 					}
@@ -416,6 +414,12 @@ body{
 					@media screen and (max-device-width: 1400px){
 						font-size: 25px;
 					}
+					@media handheld and (max-device-width: 770px) and (orientation: portrait){
+						font-size: 10px;
+					}
+					@media handheld and (max-device-width: 480px) and (orientation: portrait){
+						font-size: 10px;
+					}
 				}
 				.trait{
 					@include trait;
@@ -430,7 +434,7 @@ body{
 			.positionServices{
 				display: flex;
 				justify-content: space-between;
-				@media screen and (max-device-width: 770px){
+				@media handheld and (max-device-width: 770px){
 					display: block;
 				}
 				.image{
@@ -473,7 +477,7 @@ body{
 						width: 600px;
 						margin-top: 40px;
 					}
-					@media screen and (max-device-width: 770px){
+					@media handheld and (max-device-width: 770px){
 						width: 700px;
 						margin-top: 40px;
 					}
@@ -528,7 +532,7 @@ body{
 						@media screen and (max-device-width: 1000px){
 							width: 500px;
 						}
-						@media screen and (max-device-width: 770px){
+						@media handheld and (max-device-width: 770px){
 							width: 600px;
 						}
 						h1{
@@ -578,6 +582,13 @@ body{
 				li{
 					list-style: none;
 					position: relative;
+					display: block;
+						.firstChild{
+							border-radius: 5px 0 0 5px;
+						}
+						.lastChild{
+							border-radius: 0 5px 5px 0;	
+						}
 					a{
 						display: block;
 						width: 90px;
@@ -588,6 +599,7 @@ body{
 						font-size: 14px;
 						color: black;
 						text-decoration: none;
+						
 					}
 					a:hover{
 						background-color: $bleu;
