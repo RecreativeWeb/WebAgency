@@ -2,8 +2,15 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import"compass";
+@import "compass";
 @import "compass/reset";
+$mq-breakpoints: (
+    mobile:  480px,
+    tablet:  772px,
+    desktop: 1024px,
+    wide:    1400px
+);
+@import "mq";
 $bleu: rgb(112,171,207);
 @mixin animeLiens{
 	border-top: 3px solid $bleu;
@@ -24,15 +31,27 @@ $bleu: rgb(112,171,207);
 	font-size: 18px;
 	color: white;
 	line-height: 55px;
+	@include mq($from: tablet, $until: desktop) {
+		line-height: 45px;
+	}
 }
 @mixin titre{
 	text-align: center;
 	font-size:30px;
+	@include mq($until: mobile) {
+		font-size: 10px;
+	}
+	@include mq($from: mobile, $until: tablet) {
+		font-size: 14px;
+	}
 }
 @mixin sousTitre{
 	text-align: center;
 	font-size: 14px;
 	margin-bottom: 30px;
+	@include mq($until: mobile) {
+		font-size: 9px;
+	}
 }
 @mixin trait{
 	width: 200px;
@@ -42,6 +61,12 @@ $bleu: rgb(112,171,207);
 	margin-bottom: 20px;
 	background-color: silver;
 	position: relative;
+	@include mq($until: mobile) {
+		width: 80px;
+	}
+	@include mq($from: mobile, $until: tablet) {
+		width: 120px;
+	}
 }
 @mixin rond{
 	width: 10px;
@@ -52,6 +77,12 @@ $bleu: rgb(112,171,207);
 	position: absolute;
 	margin-left: 95px;
 	margin-top: -6px;
+	@include mq($until: mobile) {
+		margin-left: 35px;
+	}
+	@include mq($from: mobile, $until: tablet) {
+		margin-left: 55px;
+	}
 }
 /* DEBUT DU SCSS */
 body{
@@ -65,28 +96,26 @@ body{
 	.container{
 		position: absolute;
 		left: 50%;
-		width:1600px;
+		display: flex;
+		flex-direction: column;
+		@include mq($until: mobile) {
+	        width: 300px;
+	        margin-left: -150px;
+    	}
+    	@include mq($from: mobile, $until: tablet) {
+        	width: 700px;
+	        margin-left: -350px;
+    	}
+    	@include mq($from: tablet, $until: desktop) {
+        	width: 950px;
+	        margin-left: -475px;
+    	}
+    	@include mq($from: desktop, $until: wide) {
+        	width: 1200px;
+	        margin-left: -600px;
+    	}
+    	width:1600px;
 		margin-left: -800px;
-		@media screen and (max-width: 1400px){
-			width: 1200px;
-			margin-left: -600px;
-		}
-		@media screen and (max-width: 1200px){
-			width: 1000px;
-			margin-left: -500px;
-		}
-		@media screen and (max-width: 1000px){
-			width: 800px;
-			margin-left: -400px;
-		}
-		@media all screen and (max-device-width: 770px){
-			width: 700px;
-			margin-left: -350px;
-		}
-		@media all screen and (max-device-width: 480px){
-			width: 400px;
-			margin-left: -200px;
-		}
 /* HEADER FIXED EN TOP: LOGO ET MENU */
 		.header{
 			width: 1600px;
@@ -97,77 +126,83 @@ body{
 			display: flex;
 			justify-content: space-around;
 			background-color: white;
-			@media screen and (max-device-width: 1400px){
-				width: 1200px;
-				height: 100px;
-			}
-			@media screen and (max-device-width: 1200px){
-				width: 1000px;
-				height: 100px;
-				justify-content: space-between;
-			}
-			@media screen and (max-device-width: 1000px){
-				width: 800px;
-				height: 100px;
-				justify-content: space-between;
-			}
-			@media all screen and (max-device-width: 770px){
-				width: 700px;
-				height: 200px;
-				flex-direction: column;
-			}
-			@media all screen and (max-device-width: 480px){
-				width: 400px;
-				height: 200px;
-				flex-direction: column;
-			}
+			@include mq($until: mobile) {
+		        width: 300px;
+		        height: 110px;
+		        flex-direction: column;
+	    	}
+	    	@include mq($from: mobile, $until: tablet) {
+	        	width: 700px;
+	        	height: 130px;
+	        	flex-direction: column;
+	    	}
+	    	@include mq($from: tablet, $until: desktop) {
+	        	width: 950px;
+	    	}
+	    	@include mq($from: desktop, $until: wide) {
+	        	width: 1200px;
+	    	}
 			.logo{
-				width: 253px;
+				@include mq($until: mobile) {
+					width: 253px;
+					height: 57px;
+			        margin: 0 auto;
+			        margin-top: 5px;
+		    	}
+		    	@include mq($from: mobile, $until: tablet) {
+		        	width: 253px;
+					height: 57px;
+			        margin: 0 auto;
+		    	}
+		    	width: 253px;
 				height: 57px;
 				margin-top: 21px;
 				background-image: url('../images/logo.png');
-				@media screen and (max-width: 770px){
-					margin: auto;
-					display: block;
-
-				}
 			}
 			.liens{
-				width: 700px;
+				@include mq($until: mobile) {
+			        width: 300px;
+			        height: 30px;
+			        justify-content: space-around;
+		    	}
+		    	@include mq($from: mobile, $until: tablet) {
+		        	width: 700px;
+		        	height: 30px;
+		        	justify-content: space-around;
+		    	}
+		    	@include mq($from: tablet, $until: desktop) {
+		        	width: 600px;
+		    	}
+		    	@include mq($from: desktop, $until: wide) {
+		        	width: 800px;
+		    	}
+		    	width: 700px;
 				display: flex;
 				justify-content: space-between;
 				list-style: none;
 				margin-top: 21px;
-				@media screen and (max-width: 1400px){
-					width: 400px;
-				}
-				@media screen and (max-width: 1200px){
-					width: 350px;
-					margin-left: -200px;
-				}
-				@media handheld and (max-width: 770px){
-					width: 700px;
-					margin-top: 15px;
-					display: block;
-				}
-				@media handheld and (max-width: 480px){
-					width: 400px;
-					margin-top: 15px;
-				}
 				li{
 					line-height: 57px;
-					@media handheld and (max-width: 770px){
-						line-height: 30px;
-					}
+					@include mq($until: mobile) {
+				    	line-height: 30px;
+			    	}
+			    	@include mq($from: mobile, $until: tablet) {
+			        	line-height: 30px;	
+			    	}
 					a{
 						color: black;
 						font-size:18px;
 						font-weight: 800;
 						text-decoration: none;
 						display: block;
-						@media screen and (max-width: 1400px){
-							font-size: 14px;
-						}
+						@include mq($until: mobile) {
+					    	font-size:12px;
+					    	font-weight: 400;
+				    	}
+				    	@include mq($from: mobile, $until: tablet) {
+				        	font-size:12px;	
+				        	font-weight: 400;
+				    	}
 					}
 					a:hover{
 						@include animeLiens;
@@ -178,51 +213,50 @@ body{
 /* SECTION 1 : ECRAN D'ACCUEIL */
 		.accueil{
 			@include section;
+			@include mq($until: mobile) {
+				padding-top: 140px;
+				height: 0vh;
+			}
+			@include mq($from: mobile, $until: tablet) {
+				padding-top: 140px;
+				height: 150px;
+			}
 			.slider{
 				width: 1600px;
 				height: 550px;
-				position:relative;
 				overflow:hidden;
-				@media screen and (max-device-width: 1400px){
-					width: 1200px;
-					height: 375px;
-				}
-				@media screen and (max-device-width: 1200px){
-					width: 1000px;
-					height: 375px;
-				}
-				@media screen and (max-device-width: 1000px){
-					width: 800px;
-					height: 375px;
-				}
-				@media handheld and (max-device-width: 770px){
-					width: 700px;
-					height: 375px;
-				}
-				@media handheld and (max-width: 480px){
-					width: 400px;
-					height: 137px;
-				}
+				@include mq($until: mobile) {
+			        width: 300px;
+			        height: 103px;
+		    	}
+		    	@include mq($from: mobile, $until: tablet) {
+		        	width: 700px;
+		        	height: 240px;
+		    	}
+		    	@include mq($from: tablet, $until: desktop) {
+		        	width: 950px;
+		        	height: 326px;
+		    	}
+		    	@include mq($from: desktop, $until: wide) {
+		        	width: 1200px;
+		        	height: 412px;
+		    	}
 				.slideshow{
 					width: 3200px;
-					position: absolute;
 					top: 0;
 					left: 0;
-					@media screen and (max-device-width: 1400px){
-						width: 2400px;
-					}
-					@media screen and (max-device-width: 1200px){
-						width: 2000px;
-					}
-					@media screen and (max-device-width: 1000px){
-						width: 1600px;
-					}
-					@media handheld and (max-device-width: 770px){
-						width: 1400px;
-					}
-					@media handheld and (max-width: 480px){
-						width: 800px;
-					}
+					@include mq($until: mobile) {
+				        width: 300px;
+			    	}
+			    	@include mq($from: mobile, $until: tablet) {
+			        	width: 700px;
+			    	}
+			    	@include mq($from: tablet, $until: desktop) {
+			        	width: 1900px;
+			    	}
+			    	@include mq($from: desktop, $until: wide) {
+			        	width: 2400px;
+			    	}
 					li{
 						display: inline-block;
 					}
@@ -230,36 +264,53 @@ body{
 						width: 1600px;
 						height: 550px;
 						background-image: url('../images/bg1.jpg');
-						transition: left 1s;
-						@media screen and (max-device-width: 1400px){
-							width: 1200px;
-							height: 412px;
-							background-size: cover;
-						}
-						@media screen and (max-device-width: 1200px){
-							width: 1000px;
-							height: 343px;
-							background-size: cover;
-						}
-						@media screen and (max-device-width: 1000px){
-							width: 800px;
-							height: 275px;
-							background-size: cover;
-						}
-						@media handheld and (max-device-width: 770px){
-							width: 700px;
-							height: 240px;
-							background-size: cover;
-						}
-						@media handheld and (max-width: 480px){
-							width: 400px;
-							height: 137px;
-							background-size: cover;
-						}
+						transition: left 2s ease;
+						@include mq($until: mobile) {
+					        width: 300px;
+					        height: 103px;
+					        background-size: 300px 103px;
+				    	}
+				    	@include mq($from: mobile, $until: tablet) {
+				        	width: 700px;
+				        	height: 240px;
+				        	background-size: 700px 240px;
+				    	}
+				    	@include mq($from: tablet, $until: desktop) {
+				        	width: 950px;
+				        	height: 326px;
+				        	background-size: 950px 326px;
+				    	}
+				    	@include mq($from: desktop, $until: wide) {
+				        	width: 1200px;
+				        	height: 412px;
+				        	background-size: 1200px 412px;
+				    	}
 						.slogan{
 							font-size:30px;
 							padding-top: 140px;
 							padding-left: 100px;
+							@include mq($until: mobile) {
+								font-size: 7px;
+								padding-top: 10px;
+								padding-left: 10px;
+								line-height: 10px;
+							}
+							@include mq($from: mobile, $until: tablet) {
+								font-size: 20px;
+								padding-top: 30px;
+								padding-left: 30px;
+								line-height: 26px;
+							}
+							@include mq($from: tablet, $until: desktop) {
+								font-size: 22px;
+								padding-top: 60px;
+								padding-left: 60px;
+								line-height: 30px;
+							}
+							@include mq($from: desktop, $until: wide) {
+								padding-top: 60px;
+								line-height: 40px;
+							}
 							.bleu{
 								color: $bleu;
 							}
@@ -271,6 +322,26 @@ body{
 							color: white;
 							font-size: 14px;
 							padding-left: 100px;
+							@include mq($until: mobile) {
+								font-size: 6px;
+								padding-left: 10px;
+								padding-top: 10px;
+							}
+							@include mq($from: mobile, $until: tablet) {
+								font-size: 12px;
+								padding-left: 30px;
+								padding-top: 10px;
+							}
+							@include mq($from: tablet, $until: desktop) {
+								font-size: 14px;
+								padding-left: 60px;
+								padding-top: 20px;
+							}
+							@include mq($from: desktop, $until: wide) {
+								padding-top: 30px;
+								padding-bottom: 20px;
+								font-size: 16px;
+							}
 						}
 						.boutonInfo{
 							@include boutton;
@@ -278,24 +349,32 @@ body{
 							border-radius: 5px;
 							margin-top: 20px;
 							margin-left: 100px;
+							@include mq($until: mobile) {
+								display: none;
+							}
+							@include mq($from: mobile, $until: tablet) {
+								display: none;
+							}
+							@include mq($from: tablet, $until: desktop) {
+								margin-left: 60px;
+								margin-top: 40px;
+								font-size: 12px;
+							}
 						}
 					}
 					#slider1:target{
 						left: -1600px;
-						@media screen and (max-device-width: 1400px){
+						@include mq($until: mobile) {
+							display: none;
+						}
+						@include mq($from: mobile, $until: tablet) {
+							display: none;
+						}
+						@include mq($from: tablet, $until: desktop) {
+							left: -950px;
+						}
+						@include mq($from: desktop, $until: wide) {
 							left: -1200px;
-						}
-						@media screen and (max-device-width: 1200px){
-							left: -1000px;
-						}
-						@media screen and (max-device-width: 1000px){
-							left: -800px;
-						}
-						@media handheld and (max-device-width: 770px){
-							left: -700px;
-						}
-						@media handheld and (max-width: 480px){
-							left: -400px;
 						}
 					}
 					.slider2{
@@ -303,79 +382,64 @@ body{
 						height: 550px;
 						background-image: url('../images/bg2.jpg');
 						transition: left 1s;
-						@media screen and (max-device-width: 1400px){
-							width: 1200px;
-							height: 412px;
-							background-size: cover;
-						}
-						@media screen and (max-device-width: 1200px){
-							width: 1000px;
-							height: 343px;
-							background-size: cover;
-						}
-						@media screen and (max-device-width: 1000px){
-							width: 800px;
-							height: 275px;
-							background-size: cover;
-						}
-						@media handheld and (max-device-width: 770px){
-							width: 700px;
-							height: 240px;
-							background-size: cover;
-						}
-						@media handheld and (max-width: 480px){
-							width: 400px;
-							height: 137px;
-							background-size: cover;
-						}
+						@include mq($until: mobile) {
+					        display: none;
+				    	}
+				    	@include mq($from: mobile, $until: tablet) {
+				        	display: none;
+				    	}
+				    	@include mq($from: tablet, $until: desktop) {
+				        	width: 950px;
+				        	height: 326px;
+				        	background-size: 950px 326px;
+				    	}
+				    	@include mq($from: desktop, $until: wide) {
+				        	width: 1200px;
+				        	height: 412px;
+				        	background-size: 1200px 412px;
+				    	}
 					}
 					#slider2:target{
 						left: 1600px;
-						@media screen and (max-device-width: 1400px){
+						@include mq($until: mobile) {
+							display: none;
+						}
+						@include mq($from: mobile, $until: tablet) {
+							display: none;
+						}
+						@include mq($from: tablet, $until: desktop) {
+							left: 950px;
+						}
+						@include mq($from: desktop, $until: wide) {
 							left: 1200px;
-						}
-						@media screen and (max-device-width: 1200px){
-							left: 1000px;
-						}
-						@media screen and (max-device-width: 1000px){
-							left: 800px;
-						}
-						@media handheld and (max-device-width: 770px){
-							left: 700px;
-						}
-						@media handheld and (max-width: 480px){
-							left: 400px;
 						}
 					}
 				}
 			}
 			.fleches{
+					@include mq($until: mobile) {
+						display: none;
+					}
+					@include mq($from: mobile, $until: tablet) {
+						display: none;
+					}
+					@include mq($from: tablet, $until: desktop) {
+						width: 950px;
+						height: 45px;
+						top: 230px;
+					}
+					@include mq($from: desktop, $until: wide) {
+						width: 1200px;
+						height: 55px;
+						top: 270px;
+					}
 					width: 1600px;
 					height: 55px;
 					position: absolute;
 					top: 247px;
 					display: flex;
 					justify-content: space-between;
-					@media screen and (max-device-width: 1400px){
-						width: 1200px;
-						top: 178px;
-					}
-					@media screen and (max-device-width: 1200px){
-						width: 1000px;
-						top: 144px;
-					}
-					@media screen and (max-device-width: 1000px){
-						width: 800px;
-						top: 110px;
-					}
-					@media handheld and (max-device-width: 770px){
-						width: 700px;
-						top: 92px;
-					}
-					@media handheld and (max-width: 480px){
-						width: 400px;
-						top: 41px;
-					}
+					z-index:5000;
 					.flecheGauche{
 						@include fleches;
 						width: 25px;
@@ -397,29 +461,29 @@ body{
 						background-color: $bleu;
 					}			 
 			}
-			.slider2:target .fleches{
-					left: 1600px;
-			}		
+			//.slider2:target .fleches{
+					//left: 1600px;
+			//}		
 		}
 /* SECTION 2 : SERVICES */
 		.services{
 			@include section;
+			@include mq($until: mobile) {
+				height: 560px;
+			}
+			@include mq($from: mobile, $until: tablet) {
+				height: 900px;
+			}
+			@include mq($from: tablet, $until: desktop) {
+				height: 600px;
+			}
+			@include mq($from: desktop, $until: wide) {
+				height: 800px;
+			}
 			.titreSection{
 				h1{
 					@include titre;
 					padding-top: 40px;
-					@media screen and (max-device-width: 1400px){
-						padding-top: 25px;
-					}
-					@media screen and (max-device-width: 1400px){
-						font-size: 25px;
-					}
-					@media handheld and (max-device-width: 770px) and (orientation: portrait){
-						font-size: 10px;
-					}
-					@media handheld and (max-device-width: 480px) and (orientation: portrait){
-						font-size: 10px;
-					}
 				}
 				.trait{
 					@include trait;
@@ -434,52 +498,58 @@ body{
 			.positionServices{
 				display: flex;
 				justify-content: space-between;
-				@media handheld and (max-device-width: 770px){
-					display: block;
+				@include mq($until: mobile) {
+					flex-direction: column;
+				}
+				@include mq($from: mobile, $until: tablet) {
+					flex-direction: column;
 				}
 				.image{
 					width: 510px;
 					height: 319px;
-					background-image: url("../images/main-feature.png");
 					margin-top: 20px;
-					@media screen and (max-device-width: 1400px){
+					@include mq($until: mobile) {
+						display: block;
+						margin: 0 auto;
+						width: 200px;
+						height: 125px;
+						background-size: 200px 125px;
+					}
+					@include mq($from: mobile, $until: tablet) {
+						display: block;
+						margin: 0 auto;
 						width: 400px;
 						height: 250px;
 						background-size: 400px 250px;
-						margin-top: 35px;
 					}
-					@media screen and (max-device-width: 1200px){
+					@include mq($from: tablet, $until: desktop) {
 						width: 300px;
 						height: 187px;
 						background-size: 300px 187px;
-						margin-top: 60px;
+						margin-top: 80px;
 					}
-					@media screen and (max-device-width: 1000px){
-						width: 250px;
-						height: 156px;
-						background-size: 250px 156px;
-						margin-top: 60px;
+					@include mq($from: desktop, $until: wide) {
+						width: 400px;
+						height: 250px;
+						background-size: 400px 250px;
+						margin-top: 50px;
 					}
 				}
 				.listeMetiers{
 					width: 1200px;
 					list-style: none;
 					margin-top: 50px;
-					@media screen and (max-device-width: 1400px){
-						width: 850px;
-						margin-top: 30px;
+					@include mq($until: mobile) {
+						width: 300px;
 					}
-					@media screen and (max-device-width: 1200px){
+					@include mq($from: mobile, $until: tablet) {
 						width: 700px;
-						margin-top: 40px;
 					}
-					@media screen and (max-device-width: 1000px){
-						width: 600px;
-						margin-top: 40px;
+					@include mq($from: tablet, $until: desktop) {
+						width: 800px;
 					}
-					@media handheld and (max-device-width: 770px){
-						width: 700px;
-						margin-top: 40px;
+					@include mq($from: desktop, $until: wide) {
+						width: 1200px;
 					}
 					li{
 						display: flex;
@@ -496,11 +566,19 @@ body{
 						color: $bleu;
 						text-align: center;
 						position: relative;
-						@media screen and (max-device-width: 1200px){
-							width: 40px;
-							height: 40px;
-							font-size: 20px;
-							line-height: 40px;
+						@include mq($until: mobile) {
+							width: 20px;
+							height: 20px;
+							line-height: 20px;
+							font-size: 10px;
+							margin-top: 15px;
+						}
+						@include mq($from: mobile, $until: tablet) {
+							margin-top: 5px;
+						}
+						@include mq($from: desktop, $until: wide) {
+							margin-left: 40px;
+							margin-top: 5px;
 						}
 						span{
 							display: block;
@@ -512,37 +590,47 @@ body{
 							border-radius: 25px;
 							border: 2px solid white;
 							background-color: $bleu;
-							@media screen and (max-device-width: 1200px){
-								width: 8px;
-								height: 8px;
-								left: 34px;
-								top: 15px;
+							@include mq($until: mobile) {
+								width: 5px;
+								height: 5px;
+								left: 15px;
+								top: 6px;
 							}
 						}
 					}
 					.definition{
 						width: 1000px;
 						margin-bottom: 40px;
-						@media screen and (max-device-width: 1400px){
-							width: 700px;
+						@include mq($until: mobile) {
+							width: 240px;
 						}
-						@media screen and (max-device-width: 1200px){
-							width: 600px;
+						@include mq($from: mobile, $until: tablet) {
+							width: 550px;
 						}
-						@media screen and (max-device-width: 1000px){
+						@include mq($from: tablet, $until: desktop) {
 							width: 500px;
 						}
-						@media handheld and (max-device-width: 770px){
-							width: 600px;
+						@include mq($from: desktop, $until: wide) {
+							width: 620px;
 						}
 						h1{
 							font-weight: bold;
 							font-size: 14px;
 							line-height: 20px;
+							@include mq($until: mobile) {
+								font-size: 5px;
+							}
+							@include mq($from: mobile, $until: tablet) {
+								font-size: 12px;
+							}
 						}
 						p{
 							font-size: 12px;
 							line-height: 14px;
+							@include mq($until: mobile) {
+								font-size: 6px;
+								line-height: 7px;
+							}
 						}
 					}	
 				}
@@ -553,16 +641,24 @@ body{
 			@include section;
 			background-color: rgb(245,245,245);
 			height: 800px;
-			@media screen and (max-device-width: 1400px){
-				height: 1050px;
+			@include mq($until: mobile) {
+				height: 1550px;
+				padding-top: 0;
 			}
-			@media screen and (max-device-width: 1200px){
-				height: 1340px;
+			@include mq($from: mobile, $until: tablet) {
+				height: 2500px;
+				padding-top: 0;
+			}
+			@include mq($from: tablet, $until: desktop) {
+				height: 1350px;
+			}
+			@include mq($from: desktop, $until: wide) {
+				height: 1100px;
 			}
 			.titrePortfolio{
 				h1{
 					@include titre;
-					padding-top: 40px;
+					padding-top: 30px;
 				}
 				.trait{
 					@include trait;
@@ -579,6 +675,10 @@ body{
 				justify-content: center;
 				margin-top: 40px;
 				margin-bottom: 40px;
+				@include mq($until: mobile) {
+					margin-bottom: 20px;
+					margin-top: 20px;
+				}
 				li{
 					list-style: none;
 					position: relative;
@@ -599,13 +699,25 @@ body{
 						font-size: 14px;
 						color: black;
 						text-decoration: none;
-						
+						@include mq($until: mobile) {
+							font-size: 8px;
+							width: 50px;
+							line-height: 16px;
+							height: 16px;
+						}
+						@include mq($from: mobile, $until: tablet) {
+							font-size: 14px;
+						}
 					}
 					a:hover{
 						background-color: $bleu;
 						color: white;
 						border-bottom: 3px solid rgb(85,140,170);
 						margin-bottom: -3px;
+						@include mq($until: mobile) {
+							border-bottom: 2px solid rgb(85,140,170);
+							margin-bottom: -2px;
+						}
 						span{
 							display: block;
 							width: 0;
@@ -615,7 +727,12 @@ body{
 							border-left: 8px solid transparent;
     						border-right: 8px solid transparent;
     						border-top: 8px solid rgb(85,140,170);
-    						margin-bottom: -3px;
+    						@include mq($until: mobile) {
+    							margin-left: 18px;
+    							border-left: 5px solid transparent;
+	    						border-right: 5px solid transparent;
+	    						border-top: 5px solid rgb(85,140,170);
+	    					}
 						}
 					}
 				}
@@ -624,6 +741,9 @@ body{
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
+				@include mq($until: mobile) {
+					width: 300px;
+				}
 				li{
 					width: 350px;
 					height: 233px;
@@ -632,17 +752,33 @@ body{
 					margin-bottom: 40px;
 					list-style: none;
 					overflow: hidden;
+					@include mq($until: mobile) {
+						width: 200px;
+						height: 133px;
+						//margin-left: 2px;
+						//margin-right: 2px;
+					}
 					.creative{
 						width: 350px;
 						height: 233px;
 						background-size: 350px 233px;
+						@include mq($until: mobile) {
+							width: 140px;
+							height: 93px;
+							background-size: 140px 93px;
+						}
 					}
 					p{
 					  height: 100px;
 					  padding: 20px;
 					  background-color: rgba(0,0,0,0.7);
 					  opacity: 0.8;
+					  color: white;
 					  transition: margin-top 0.5s ease;
+					  @include mq($until: mobile) {
+					  	height: 10px;
+					  	font-size: 6px;
+					  }
 					}
 				}
 				li:hover p{
@@ -650,6 +786,9 @@ body{
 					color: white;
 					font-size: 14px;
 					position: relative;
+					@include mq($until: mobile) {
+						font-size: 6px;
+					}
 						span.grosRond{
 						display: block;
 						position: absolute;
@@ -696,17 +835,20 @@ body{
 					position: absolute;
 					top: 0;
 					left: 0;
-					@media screen and (max-device-width: 1400px){
+					@include mq($until: mobile) {
+						display: none;
+					}
+					@include mq($from: mobile, $until: tablet) {
+						width: 700px;
+						height: 218px;
+					}
+					@include mq($from: tablet, $until: desktop) {
+						width: 950px;
+						height: 296px;
+					}
+					@include mq($from: desktop, $until: wide) {
 						width: 1200px;
 						height: 375px;
-					}
-					@media screen and (max-device-width: 1200px){
-						width: 1000px;
-						height: 312px;
-					}
-					@media screen and (max-device-width: 1000px){
-						width: 800px;
-						height: 250px;
 					}
 				}
 
@@ -718,17 +860,21 @@ body{
 				position: absolute;
 				z-index: 600;
 				top: 270px;
-				@media screen and (max-device-width: 1400px){
+				@include mq($until: mobile) {
+					display: none;
+				}
+				@include mq($from: mobile, $until: tablet) {
+					width: 700px;
+					height: 218px;
+					top: 253px;
+				}
+				@include mq($from: tablet, $until: desktop) {
+						width: 950px;
+						height: 296px;
+					}
+				@include mq($from: desktop, $until: wide) {
 					width: 1200px;
 					height: 375px;
-				}
-				@media screen and (max-device-width: 1200px){
-					width: 1000px;
-					height: 312px;
-				}
-				@media screen and (max-device-width: 1000px){
-					width: 800px;
-					height: 250px;
 				}
 				.infos{
 					width: 280px;
@@ -738,36 +884,28 @@ body{
 					margin-top: 30px;
 					margin-left: 1050px;
 					position: absolute;
-					@media screen and (max-device-width: 1400px){
-						width: 200px;
-						height: 318px;
-						margin-left: 900px;
+					@include mq($until: mobile) {
+						display: none;
 					}
-					@media screen and (max-device-width: 1200px){
-						width: 200px;
-						height: 290px;
-						margin-left: 750px;
+					@include mq($from: mobile, $until: tablet) {
+						display: none;
+					}
+					@include mq($from: tablet, $until: desktop) {
+						margin-left: 305px;
 						margin-top: 10px;
+						height: 270px;
 					}
-					@media screen and (max-device-width: 1000px){
-						width: 200px;
-						height: 220px;
-						margin-left: 380px;
-						margin-top: 18px;
+					@include mq($from: desktop, $until: wide) {
+						margin-left: 700px;
+						margin-top: 10px;
+						height: 355px;
 					}
 					h3{
 						margin-left:10px;
 						margin-top: 30px;
 						font-weight: 800;
-						@media screen and (max-device-width: 1400px){
-							margin-top: 20px;
-						}
-						@media screen and (max-device-width: 1200px){
-							margin-top: 10px;
-						}
-						@media screen and (max-device-width: 1000px){
-							margin-top: 8px;
-							font-size: 13px;
+						@include mq($from: tablet, $until: desktop) {
+							display: none;
 						}
 					}
 					.adresse{
@@ -775,14 +913,8 @@ body{
 						font-weight: 800;
 						margin-left: 10px;
 						line-height: 20px;
-						@media screen and (max-device-width: 1400px){
-							line-height: 15px;
-						}
-						@media screen and (max-device-width: 1000px){
-							line-height: 13px;
-							font-size: 13px;
+						@include mq($from: tablet, $until: desktop) {
 							margin-top: -10px;
-							margin-bottom: -10px;
 						}
 					}
 					input, textarea{
@@ -792,21 +924,77 @@ body{
 						margin-bottom: 10px;
 						border: 1px solid silver;
 						background-color: white;
-						@media screen and (max-device-width: 1000px){
-							margin-top: -5px;
-						}
 					}
 					.envoyer{
 						@include boutton;
 						font-size: 12px;
 						width: 110px;
 						margin-right: 160px;
-						@media screen and (max-device-width: 1400px){
-							margin-left: 8px;
-						}
 					}
 				}
 			}	
+			.infosSmall{
+					@include mq($until: mobile) {
+						width: 280px;
+						height: 430px;
+						h3{
+							display: none;
+						}
+						.adresse{
+							font-size: 12px;
+							font-weight: 400;
+							margin-left: 10px;
+							line-height: 14px;
+						}
+						input, textarea{
+							width: 100%;
+							display: block;
+							margin: auto;
+							margin-bottom: 10px;
+							border: 1px solid silver;
+							background-color: white;
+						}
+						.envoyer{
+							@include boutton;
+							font-size: 12px;
+							width: 110px;
+							margin-right: 160px;
+						}
+					}
+					@include mq($from: mobile, $until: tablet) {
+						margin-top: 280px;
+						h3{
+							display: none;
+						}
+						.adresse{
+							font-size: 12px;
+							font-weight: 400;
+							margin-left: 10px;
+							line-height: 14px;
+						}
+						input, textarea{
+							width: 100%;
+							display: block;
+							margin: auto;
+							margin-bottom: 10px;
+							border: 1px solid silver;
+							background-color: white;
+							@include mq($from: mobile, $until: tablet) {
+								border: 2px solid silver;
+								width: 100%;
+							}
+						}
+						.envoyer{
+							@include boutton;
+							font-size: 12px;
+							width: 110px;
+							margin-right: 160px;
+							@include mq($from: mobile, $until: tablet) {
+								margin-left: 0;
+							}
+						}
+					}
+			}
 		}
 /*FIN DU CONTAINER*/
 	}
